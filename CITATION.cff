@@ -5,7 +5,6 @@ type: software
 authors:
   - family-names: Tang
     given-names: Reynard Filbert
-    email: REDACTED-EMAIL
 license: MIT
 repository-code: "https://github.com/Lo20xl/magnetide"
 abstract: >-

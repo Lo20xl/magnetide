@@ -240,7 +240,7 @@ These are what the rewrite must fix:
 
 ## 12. Outreach already sent — the emails must match the report
 
-Six researchers emailed from `REDACTED-EMAIL`. **The report and the emails
+Six researchers were emailed from the project outreach mailbox. **The report and the emails
 must not contradict each other**, because a reply makes the mismatch visible.
 
 | To | Affiliation | Sent |
@@ -268,12 +268,12 @@ Not yet contacted, still open:
 
 | Path | What |
 |---|---|
-| `Desktop\steam-awg\Magnetide-final-design.md` | Lane A design doc, 19 Oct, **now superseded** |
-| `Desktop\steam-awg\magnetide_predict.py` | Lane A solver, reproduces baseline exactly |
-| `Desktop\steam-awg\magnetide_sweep_geom.py` | first geometry sweep, w found to be untileable at 16 |
-| `Desktop\steam-awg\magnetide_sweep_geom2.py` | adds cost, tilability, fuse and end-effect gates |
-| `Desktop\mhd_v19_stl\` | 24 STL files from v19, **obsolete geometry** |
-| `Desktop\MHD-university-outreach.md` | outreach pack; **its email templates quote the obsolete 0.1 T spec — do not copy from them** |
+| `docs/DESIGN-LANE-A.md` | Lane A design doc, 19 Oct, **now superseded** |
+| `model/magnetide_predict.py` | Lane A solver, reproduces baseline exactly |
+| `model/magnetide_sweep_geom.py` | first geometry sweep, w found to be untileable at 16 |
+| `model/magnetide_sweep_geom2.py` | adds cost, tilability, fuse and end-effect gates |
+| `stl/` | STL files from v19, **obsolete geometry** |
+| project workspace | outreach pack; **its email templates quote the obsolete 0.1 T spec — do not copy from them** |
 
 ---
 
