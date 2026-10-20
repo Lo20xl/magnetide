@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Blender
+*.blend1
+*.blend2
+
+# OpenFOAM — regenerable by cfd/run.sh, do not commit
+cfd/case/constant/polyMesh/
+cfd/case/constant/extendedFeatureEdgeMesh/
+cfd/case/200/
+cfd/case/400/
+cfd/case/600/
+cfd/case/800/
+cfd/logs/run.*
+cfd/case/processor*/
+*.foam
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Local secrets
+.env

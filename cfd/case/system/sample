@@ -1,0 +1,48 @@
+/*M*{{{*/
+FoamFile { version 2.0; format ascii; class dictionary; object sample; }
+type sets;
+libs ("libsampling.so");
+writeControl onEnd;
+writeInterval 1;
+setFormat   raw;
+setCompression false;
+writeFormat ascii;
+vtkFormat   legacy;
+interpolationScheme cellPoint;
+fields (U p);
+sets
+{
+    centreline
+    {
+        type uniform;
+        axis x;
+        start (-0.147 0 0);
+        end   (0.121 0 0);
+        nPoints 60;
+    }
+    acrossChannel_y
+    {
+        type uniform;
+        axis y;
+        start (0 -0.0395 0);
+        end   (0 0.0395 0);
+        nPoints 50;
+    }
+    acrossGap_z
+    {
+        type uniform;
+        axis z;
+        start (0 0 -0.022);
+        end   (0 0 0.022);
+        nPoints 30;
+    }
+    throatLine
+    {
+        type uniform;
+        axis x;
+        start (-0.147 0 0);
+        end   (0.121 0 0);
+        nPoints 60;
+    }
+}
+// */M*}}} 

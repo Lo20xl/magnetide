@@ -1,0 +1,20 @@
+/*M*{{{*/
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object surfaceFeatureExtractDict;
+}
+flow.stl
+{
+    extractionMethod extractFromSurface;
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+        featureFile    "";
+    }
+    writeFeature  true;
+    writeVtk      false;
+}
+// */M*}}} 

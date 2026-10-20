@@ -1,0 +1,92 @@
+/*M*{{{*/
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object snappyHexMeshDict;
+}
+castellatedMesh true;
+snap           true;
+addLayers      false;
+
+geometry
+{
+    flow.stl { type triSurfaceMesh; name flow; scale 0.001; }  // STL is in mm
+}
+
+castellatedMeshControls
+{
+    maxLocalCells 1000000;
+    maxGlobalCells 3000000;
+    minRefinementCells 5;
+    maxLoadUnbalance 0.10;
+    nCellsBetweenLevels 3;
+
+    features ( );
+
+    refinementSurfaces
+    {
+        flow
+        {
+            level (1 1);
+        }
+    }
+
+    resolveFeatureAngle 30;
+
+    refinementRegions
+    {
+        // kept empty: a distance shell here zeroed the surface level (v2512 quirk)
+    }
+
+    locationInMesh (0 0 0);   // channel centreline (inside the duct)
+    allowFreeStandingZoneFaces true;
+}
+
+snapControls
+{
+    nSmoothPatch 5;
+    tolerance 2.0;
+    nSolveIter 30;
+    nRelaxIter 5;
+    nFeatureSnapIter 10;
+    implicitFeatureSnap false;
+    explicitFeatureSnap true;
+    multiRegionFeatureSnap false;
+}
+
+addLayersControls
+{
+    addLayers false;
+    relativeSizes true;
+    layers { }
+    expansionRatio 1.0;
+    finalLayerThickness 0.5;
+    minThickness 0.3;
+    nGrow 0;
+    featureAngle 130;
+    nRelaxIter 5;
+    nSmoothSurfaceNormals 1;
+}
+
+meshQualityControls
+{
+    maxNonOrtho 65;
+    maxBoundarySkewness 20;
+    maxInternalSkewness 4;
+    maxConcave 80;
+    minVol 1e-13;
+    minTetQuality 1e-15;
+    minArea -1;
+    minTwist 0.02;
+    minDeterminant 0.001;
+    minFaceWeight 0.02;
+    minVolRatio 0.01;
+    minTriangleTwist -1;
+    nSmoothScale 4;
+    errorReduction 0.75;
+}
+writeFlags ( mesh );
+mergeTolerance 1e-6;
+// */M*}}} 

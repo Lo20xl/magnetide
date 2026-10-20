@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Magnetide: a zero-dependency analytic screen model for a benchtop MHD conduction pump"
+type: software
+authors:
+  - family-names: Tang
+    given-names: Reynard Filbert
+    email: REDACTED-EMAIL
+license: MIT
+repository-code: "https://github.com/Lo20xl/magnetide"
+abstract: >-
+  A pure-Python-stdlib analytic model and parametric sweep harness for a
+  benchtop magnetohydrodynamic (MHD) conduction pump driven by permanent
+  magnets. Separates electrode length from axial field extent, applies a
+  bubble-coverage correction to effective conductivity inside the integrator,
+  and finds the operating point by bisection against the supply rail rather
+  than by sweeping current. Includes buildability gates (magnet tilability,
+  end-effect ratio, fuse limit, budget) and Blender-based verification of the
+  generated STL geometry. Validated against one bench measurement of saline
+  channel resistance: the model predicts 4.93 ohm against a measured 4.4 ohm,
+  erring conservative.
+keywords:
+  - magnetohydrodynamics
+  - mhd-pump
+  - conduction-pump
+  - seawater
+  - permanent-magnet
+  - analytic-model
+  - parametric-optimization
+  - blender-stl

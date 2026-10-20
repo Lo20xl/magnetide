@@ -1,0 +1,29 @@
+/*M*{{{*/
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object controlDict;
+}
+application     simpleFoam;
+startFrom       startTime;
+startTime       0;
+stopAt          endTime;
+endTime         800;
+deltaT          1;
+writeControl    timeStep;
+writeInterval   200;
+purgeWrite      0;
+writeFormat     ascii;
+writePrecision  7;
+writeCompression off;
+timeFormat      general;
+timePrecision   6;
+runTimeModifiable yes;
+
+functions
+{
+    // forces FO broke silently in v2512 (unknown type); net force computed from sample planes
+}
+// */M*}}} 

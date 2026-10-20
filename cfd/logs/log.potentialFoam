@@ -1,0 +1,53 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2512                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _87ed40d2-20251219 OPENFOAM=2512 version=2512
+Arch   : "LSB;label=32;scalar=64"
+Exec   : potentialFoam
+Date   : Oct 15 2026
+Time   : 08:42:31
+Host   : 338e530abeb0
+PID    : 223
+I/O    : uncollated
+Case   : /mnt/case
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+memory pool : not available
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+potentialFlow: Operating solver in PISO mode
+
+Reading velocity field U
+
+Constructing pressure field p
+
+Constructing velocity potential field Phi
+
+No MRF models present
+
+
+Calculating potential flow
+
+
+--> FOAM FATAL IO ERROR: (openfoam-2512)
+Entry 'Phi' not found in dictionary "system/fvSolution/solvers"
+
+
+file: system/fvSolution/solvers at line 13 to 26.
+
+    From const Foam::dictionary& Foam::dictionary::subDict(const Foam::word&, Foam::keyType::option) const
+    in file db/dictionary/dictionary.C at line 457.
+
+FOAM exiting
+

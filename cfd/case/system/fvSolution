@@ -1,0 +1,40 @@
+/*M*{{{*/
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object fvSolution;
+}
+solvers
+{
+    p
+    {
+        solver          GAMG;
+        smoother        DIC;
+        tolerance       1e-6;
+        relTol          0.05;
+    }
+    pFinal { $p; relTol 0; }
+    "(U|k|omega)"
+    {
+        solver          smoothSolver;
+        smoother        symGaussSeidel;
+        tolerance       1e-6;
+        relTol          0.1;
+    }
+    "(U|k|omega)Final" { $U; relTol 0; }
+}
+SIMPLE
+{
+    consistent      yes;
+    nCorrectors     2;
+    nNonOrthogonalCorrectors 1;
+    pRefPoint       (0 0 0);   // channel centre - verified inside flow cell
+    pRefValue       0;
+}
+relaxationFactors
+{
+    equations { U 0.9; k 0.9; omega 0.9; }
+}
+// */M*}}} 
