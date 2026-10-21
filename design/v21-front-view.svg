@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="660" viewBox="0 0 1180 660" font-family="Segoe UI, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="710" viewBox="0 0 1180 710" font-family="Segoe UI, Arial, sans-serif">
   <defs>
     <pattern id="silicone" width="12" height="12" patternUnits="userSpaceOnUse">
-      <rect width="12" height="12" fill="#eceff1"/>
-      <circle cx="3" cy="3" r="1.3" fill="#b0bec5"/>
-      <circle cx="9" cy="9" r="1.3" fill="#b0bec5"/>
+      <rect width="12" height="12" fill="#f5f5f5"/>
+      <circle cx="3" cy="3" r="1.3" fill="#bdbdbd"/>
+      <circle cx="9" cy="9" r="1.3" fill="#bdbdbd"/>
     </pattern>
     <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
       <path d="M0,0 L7,3 L0,6 z" fill="#c0392b"/>
@@ -28,8 +28,8 @@
     <circle cx="748" cy="305" r="9"/><circle cx="778" cy="305" r="9"/>
   </g>
 
-  <!-- ===== printed liner (trays + walls) ===== -->
-  <rect x="240" y="110" width="480" height="370" fill="#7fb3d5" stroke="#2e86c1" stroke-width="2"/>
+  <!-- ===== printed liner (trays + walls) — YELLOW ===== -->
+  <rect x="240" y="110" width="480" height="370" fill="#f9c74f" stroke="#c79a1e" stroke-width="2"/>
 
   <!-- ===== silicone potting + magnet tiles (top) ===== -->
   <rect x="245" y="115" width="470" height="95" fill="url(#silicone)" stroke="#90a4ae" stroke-width="1"/>
@@ -75,7 +75,7 @@
   <text x="620" y="355" text-anchor="middle" font-size="11" fill="#2471a3">B</text>
 
   <!-- ===== bellmouth (printed front part, dashed in front) ===== -->
-  <rect x="252" y="196" width="456" height="198" rx="18" fill="none" stroke="#2e86c1" stroke-width="2" stroke-dasharray="8,6"/>
+  <rect x="252" y="196" width="456" height="198" rx="18" fill="none" stroke="#e07b39" stroke-width="2.5" stroke-dasharray="8,6"/>
 
   <!-- ===== dimensions ===== -->
   <g stroke="#616a6b" stroke-width="1" fill="none">
@@ -89,7 +89,34 @@
   <text x="480" y="580" text-anchor="middle" font-size="12" fill="#616a6b">overall width ≈ 52 mm</text>
   <text x="845" y="300" font-size="12" fill="#616a6b">41 mm</text>
   <text x="732" y="300" font-size="11" fill="#616a6b">gap 17</text>
-  <text x="480" y="600" text-anchor="middle" font-size="11.5" fill="#2e86c1" font-style="italic">dashed outline: printed bellmouth front part, bolted to the steel tube</text>
+  <text x="480" y="600" text-anchor="middle" font-size="11.5" fill="#e07b39" font-style="italic">dashed outline: printed bellmouth front part, bolted to the steel tube</text>
+
+  <!-- ===== legend ===== -->
+  <g font-size="12" fill="#2c3e50">
+    <text x="140" y="642" font-weight="bold">Legend:</text>
+    <rect x="210" y="630" width="22" height="16" fill="#f9c74f" stroke="#c79a1e" stroke-width="1.5"/>
+    <text x="238" y="643">3D-printed (liner, trays, bellmouth)</text>
+    <rect x="490" y="630" width="22" height="16" fill="#9aa3ab" stroke="#5d6d7e" stroke-width="1.5"/>
+    <text x="518" y="643">low-carbon steel</text>
+    <rect x="660" y="630" width="22" height="16" fill="#3b6ea5" stroke="#1b4f72" stroke-width="1.5"/>
+    <text x="688" y="643">N52 magnet tiles</text>
+    <rect x="840" y="630" width="22" height="16" fill="#424242" stroke="#1c1c1c" stroke-width="1.5"/>
+    <text x="868" y="643">graphite electrodes</text>
+
+    <rect x="210" y="658" width="22" height="16" fill="url(#silicone)" stroke="#90a4ae" stroke-width="1"/>
+    <text x="238" y="671">silicone potting</text>
+    <rect x="490" y="658" width="22" height="16" fill="#d6eaf8" stroke="#2e86c1" stroke-width="1.5"/>
+    <text x="518" y="671">brine channel</text>
+    <g>
+      <rect x="660" y="658" width="22" height="16" fill="#fff" stroke="#b08d57" stroke-width="1.5"/>
+      <circle cx="671" cy="666" r="5" fill="#b08d57" stroke="#7d5a2e"/>
+      <text x="688" y="671">M3 bolts</text>
+    </g>
+    <g>
+      <rect x="840" y="658" width="22" height="16" fill="#fff" stroke="#e07b39" stroke-width="2" stroke-dasharray="4,3"/>
+      <text x="868" y="671">bellmouth outline</text>
+    </g>
+  </g>
 
   <!-- ===== callouts ===== -->
   <g font-size="11.5" fill="#2c3e50">
