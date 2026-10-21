@@ -27,7 +27,7 @@ The design question this repo answers is **which buildable geometry and operatin
 point** to choose — not "what is B in the bore". For that question a closed-form
 model with explicit buildability gates is more useful than a CFD run, because you
 can evaluate hundreds of candidates in a second and every candidate that fails a
-gate is discarded before it costs a rupiah.
+gate is discarded before it costs us money.
 
 ## What this is not
 
