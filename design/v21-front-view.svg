@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <pattern id="silicone" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#eceff1"/>
+      <circle cx="3" cy="3" r="1.3" fill="#b0bec5"/>
+      <circle cx="9" cy="9" r="1.3" fill="#b0bec5"/>
+    </pattern>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#c0392b"/>
+    </marker>
+    <marker id="arrb" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#2471a3"/>
+    </marker>
+  </defs>
+
+  <text x="480" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#2c3e50">Magnetide v21 — FRONT VIEW (down the flow axis, at the inlet)</text>
+  <text x="480" y="56" text-anchor="middle" font-size="13" fill="#7f8c8d">steel clamshell = flux return + structure · printed liner = water barrier · fold-split at channel mid-plane</text>
+
+  <!-- ===== steel clamshell top half ===== -->
+  <path d="M220,90 H740 V295 H800 V315 H740 V500 H220 V315 H160 V295 H220 Z" fill="#9aa3ab" stroke="#5d6d7e" stroke-width="2"/>
+  <!-- split line (gap between halves) -->
+  <line x1="220" y1="295" x2="800" y2="295" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="160" y1="295" x2="220" y2="295" stroke="#2c3e50" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- bolts through flanges -->
+  <g fill="#b08d57" stroke="#7d5a2e" stroke-width="1.5">
+    <circle cx="182" cy="305" r="9"/><circle cx="212" cy="305" r="9"/>
+    <circle cx="748" cy="305" r="9"/><circle cx="778" cy="305" r="9"/>
+  </g>
+
+  <!-- ===== printed liner (trays + walls) ===== -->
+  <rect x="240" y="110" width="480" height="370" fill="#7fb3d5" stroke="#2e86c1" stroke-width="2"/>
+
+  <!-- ===== silicone potting + magnet tiles (top) ===== -->
+  <rect x="245" y="115" width="470" height="95" fill="url(#silicone)" stroke="#90a4ae" stroke-width="1"/>
+  <g>
+    <rect x="285" y="118" width="190" height="90" fill="#3b6ea5" stroke="#1b4f72" stroke-width="2"/>
+    <rect x="485" y="118" width="190" height="90" fill="#3b6ea5" stroke="#1b4f72" stroke-width="2"/>
+    <text x="380" y="152" text-anchor="middle" font-size="12" fill="#fff">N52 tile</text>
+    <text x="380" y="170" text-anchor="middle" font-size="11" fill="#d6eaf8">20×10×5 · S up</text>
+    <text x="580" y="152" text-anchor="middle" font-size="12" fill="#fff">N52 tile</text>
+    <text x="580" y="170" text-anchor="middle" font-size="11" fill="#d6eaf8">20×10×5 · S up</text>
+  </g>
+  <!-- ===== silicone potting + magnet tiles (bottom) ===== -->
+  <rect x="245" y="385" width="470" height="95" fill="url(#silicone)" stroke="#90a4ae" stroke-width="1"/>
+  <g>
+    <rect x="285" y="387" width="190" height="90" fill="#3b6ea5" stroke="#1b4f72" stroke-width="2"/>
+    <rect x="485" y="387" width="190" height="90" fill="#3b6ea5" stroke="#1b4f72" stroke-width="2"/>
+    <text x="380" y="425" text-anchor="middle" font-size="12" fill="#fff">N52 tile</text>
+    <text x="380" y="443" text-anchor="middle" font-size="11" fill="#d6eaf8">20×10×5 · N up</text>
+    <text x="580" y="425" text-anchor="middle" font-size="12" fill="#fff">N52 tile</text>
+    <text x="580" y="443" text-anchor="middle" font-size="11" fill="#d6eaf8">20×10×5 · N up</text>
+  </g>
+
+  <!-- ===== graphite electrodes (side walls) ===== -->
+  <rect x="256" y="225" width="24" height="140" fill="#424242" stroke="#1c1c1c" stroke-width="1.5"/>
+  <rect x="680" y="225" width="24" height="140" fill="#424242" stroke="#1c1c1c" stroke-width="1.5"/>
+  <text x="268" y="200" text-anchor="middle" font-size="11" fill="#424242">graphite</text>
+  <text x="692" y="200" text-anchor="middle" font-size="11" fill="#424242">graphite</text>
+
+  <!-- ===== brine channel 40 x 14 ===== -->
+  <rect x="280" y="225" width="400" height="140" fill="#d6eaf8" stroke="#2e86c1" stroke-width="2"/>
+  <text x="480" y="262" text-anchor="middle" font-size="12" fill="#1a5276">brine channel 40 × 14 mm</text>
+  <!-- force = out of page (pump direction) -->
+  <g>
+    <circle cx="480" cy="310" r="10" fill="#fff" stroke="#c0392b" stroke-width="2.5"/>
+    <circle cx="480" cy="310" r="3" fill="#c0392b"/>
+    <text x="480" y="340" text-anchor="middle" font-size="11" fill="#c0392b">F = J×B → toward viewer</text>
+  </g>
+  <!-- J arrow across -->
+  <line x1="300" y1="285" x2="360" y2="285" stroke="#c0392b" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="330" y="278" text-anchor="middle" font-size="11" fill="#c0392b">J</text>
+  <!-- B arrow up -->
+  <line x1="620" y1="340" x2="620" y2="300" stroke="#2471a3" stroke-width="2.5" marker-end="url(#arrb)"/>
+  <text x="620" y="355" text-anchor="middle" font-size="11" fill="#2471a3">B</text>
+
+  <!-- ===== bellmouth (printed front part, dashed in front) ===== -->
+  <rect x="252" y="196" width="456" height="198" rx="18" fill="none" stroke="#2e86c1" stroke-width="2" stroke-dasharray="8,6"/>
+
+  <!-- ===== dimensions ===== -->
+  <g stroke="#616a6b" stroke-width="1" fill="none">
+    <line x1="220" y1="560" x2="740" y2="560"/>
+    <line x1="220" y1="552" x2="220" y2="568"/><line x1="740" y1="552" x2="740" y2="568"/>
+    <line x1="830" y1="90" x2="830" y2="500"/>
+    <line x1="822" y1="90" x2="838" y2="90"/><line x1="822" y1="500" x2="838" y2="500"/>
+    <line x1="716" y1="210" x2="716" y2="380"/>
+    <line x1="708" y1="210" x2="724" y2="210"/><line x1="708" y1="380" x2="724" y2="380"/>
+  </g>
+  <text x="480" y="580" text-anchor="middle" font-size="12" fill="#616a6b">overall width ≈ 52 mm</text>
+  <text x="845" y="300" font-size="12" fill="#616a6b">41 mm</text>
+  <text x="732" y="300" font-size="11" fill="#616a6b">gap 17</text>
+  <text x="480" y="188" text-anchor="middle" font-size="11" fill="#2e86c1" font-style="italic">printed bellmouth (front part, bolted to steel tube)</text>
+
+  <!-- ===== callouts ===== -->
+  <g font-size="11.5" fill="#2c3e50">
+    <line x1="230" y1="100" x2="120" y2="78" stroke="#5d6d7e" stroke-width="1"/>
+    <text x="115" y="74" text-anchor="end">2 mm low-carbon steel</text>
+    <text x="115" y="88" text-anchor="end">top half (clamshell)</text>
+
+    <line x1="197" y1="305" x2="120" y2="335" stroke="#5d6d7e" stroke-width="1"/>
+    <text x="115" y="331" text-anchor="end">M3 bolts, flange faces</text>
+    <text x="115" y="345" text-anchor="end">BARE metal (no coating)</text>
+
+    <line x1="252" y1="460" x2="120" y2="486" stroke="#5d6d7e" stroke-width="1"/>
+    <text x="115" y="482" text-anchor="end">silicone potting</text>
+    <text x="115" y="496" text-anchor="end">(tiles potted in printed trays)</text>
+
+    <line x1="760" y1="100" x2="870" y2="78" stroke="#5d6d7e" stroke-width="1"/>
+    <text x="875" y="74">printed liner —</text>
+    <text x="875" y="88">the water barrier</text>
+
+    <line x1="756" y1="305" x2="870" y2="335" stroke="#5d6d7e" stroke-width="1"/>
+    <text x="875" y="331">steel bottom half</text>
+    <text x="875" y="345">carries its own magnets</text>
+
+    <line x1="660" y1="440" x2="870" y2="486" stroke="#5d6d7e" stroke-width="1"/>
+    <text x="875" y="482">split at channel mid-plane:</text>
+    <text x="875" y="496">flux crosses perpendicular → cheap</text>
+  </g>
+
+  <text x="480" y="620" text-anchor="middle" font-size="11" fill="#95a5a6">Magnetide v21 · clamshell rev · scale 10 px = 1 mm · all dims mm</text>
+</svg>

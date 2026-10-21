@@ -20,7 +20,7 @@ runs on existing gear + a scavenged supply.
 | Magnetic gap g | 17 |
 | Dh | 20.7 → Le/Dh = 5.8 (gate ≥ 3 ✓) |
 | Tilability | w = 40 ✓, Le = 120 ✓ |
-| Inlet | bellmouth flare in h, r ≥ 3 mm (target 5) |
+| Inlet | printed bellmouth front part, flare r ≥ 3 mm (target 5), bolted to steel tube |
 
 ## 2. Magnets & yoke
 
@@ -29,7 +29,8 @@ runs on existing gear + a scavenged supply.
 | Tiles | 96× N52 20×10×5 (6 st × 2 poles × 2 across × 2 deep) |
 | Block lm | 10 mm |
 | Cost @ Rp6,325 | Rp607,200 |
-| Yoke | insulated soft-iron hood top + bottom, closed loop |
+| Yoke + structure | 2 mm low-carbon steel clamshell (AISI 1010/1018 or SPCC): fold-split horizontally at the channel mid-plane, M3-bolted flanges with BARE mating faces — both flux return AND structure (as Chan et al.); printed liner is the water barrier, steel stays dry behind it |
+| Magnet potting | tiles potted in place in printed trays with fish-tank silicone, cure before closing; NO spray coatings on nickel plating |
 | Gap field (modelled) | 483 mT |
 
 Why thin: thickening 10→20 mm buys field sublinearly and costs 96 more
@@ -80,7 +81,9 @@ no brick is available.
 
 1. V–I curve of YOUR graphite/brine/spacing (Cébron's request). Gives E_chem
    + R; collapses half the uncertainty; also locates the bubble choke.
-2. Yoke + magnet pack with jig; compass-check every station's direction.
+2. Steel clamshell + magnet pack: pot tiles into printed trays with jig
+   (silicone, cure before closing); compass-check every station's direction;
+   bolt flanges bare-face — no coating between halves.
 3. Electrodes, insulated hood, bellmouth, fasteners (no superglue wetted).
 4. Timed collection (primary) + kitchen-scale thrust rig + dye cross-check.
    Three replicates, mean ± SD, current-off controls.
