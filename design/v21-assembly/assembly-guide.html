@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magnetide v21 — Assembly Guide</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Segoe UI", Inter, system-ui, sans-serif;
+    color: #1c1c1e; line-height: 1.5; font-size: 10.5pt; margin: 0;
+  }
+  h1 { font-size: 21pt; margin: 0 0 2mm; letter-spacing: -0.3px; }
+  h2 { font-size: 13pt; margin: 9mm 0 3mm; padding-bottom: 1.5mm;
+       border-bottom: 1.5px solid #1c1c1e; }
+  h3 { font-size: 11pt; margin: 6mm 0 1.5mm; }
+  .sub { color: #666; font-size: 9.5pt; margin-bottom: 6mm; }
+  table { border-collapse: collapse; width: 100%; margin: 3mm 0 5mm; font-size: 9.5pt; }
+  th, td { border: 1px solid #d2d2d2; padding: 1.8mm 2.5mm; text-align: left; }
+  th { background: #f2f2f0; font-weight: 600; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  figure { margin: 4mm 0; page-break-inside: avoid; }
+  figure img { display: block; width: 100%; height: auto; max-width: 100%;
+               border: 1px solid #e4e4e4; border-radius: 3px; }
+  figcaption { font-size: 8.8pt; color: #666; margin-top: 1.5mm; }
+  .step { display: flex; gap: 5mm; page-break-inside: avoid; margin: 5mm 0; }
+  .step .txt { flex: 1; min-width: 0; }
+  .step .pic { flex: 1.15; min-width: 0; }
+  .step .pic img { display: block; width: 100%; height: auto; max-width: 100%;
+                   border: 1px solid #e4e4e4; border-radius: 3px; }
+  .num { display: inline-block; width: 6.5mm; height: 6.5mm; border-radius: 50%;
+         background: #1c1c1e; color: #fff; text-align: center; line-height: 6.5mm;
+         font-size: 9pt; font-weight: 600; margin-right: 2mm; }
+  .note { background: #f7f7f4; border-left: 3px solid #1c1c1e;
+          padding: 2.5mm 3.5mm; margin: 3mm 0; font-size: 9.5pt; }
+  .warn { background: #fdf3f2; border-left: 3px solid #b5342c;
+          padding: 2.5mm 3.5mm; margin: 3mm 0; font-size: 9.5pt; }
+  ul, ol { margin: 1.5mm 0 3mm 5mm; padding: 0; }
+  li { margin-bottom: 1.2mm; }
+  .chk li { list-style: none; }
+  .chk li::before { content: "☐  "; font-size: 11pt; }
+  footer { margin-top: 8mm; padding-top: 3mm; border-top: 1px solid #ddd;
+           font-size: 8.5pt; color: #777; }
+  .pb { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<h1>Magnetide v21 — Assembly Guide</h1>
+<div class="sub">
+  Kelas 10.8, Kelompok 1 · MHD seawater pump · 150 × 68 × 41 mm · all dimensions in mm<br>
+  Generated from the CAD model — every figure below is a render of the delivered STEP file,
+  not a drawing of it.
+</div>
+
+<h2>What you are building</h2>
+<p>
+An MHD pump channel: brine (or seawater) runs through a 40 × 14 mm bore, a 483 mT field
+crosses it, current flows between two graphite plates on the side walls, and the resulting
+Lorentz force pushes the water out the straight end. A curved bellmouth at the inlet keeps
+the flow attached so the pump does not cavitate itself.
+</p>
+
+<figure>
+  <img src="view_iso.png" alt="assembled">
+  <figcaption>Finished assembly, inlet (bellmouth) at the near end. Four side lugs per pair
+  carry 8 × M3 bolts that clamp the two steel halves together.</figcaption>
+</figure>
+
+<h2>Parts</h2>
+
+<h3>Printed (PLA or PETG) — from <code>plastic/</code></h3>
+<table>
+  <tr><th>File</th><th>Qty</th><th class="n">Size (mm)</th><th>Notes</th></tr>
+  <tr><td><code>bellmouth.stl</code></td><td class="n">1</td><td class="n">20 × 56 × 41</td>
+      <td>flare 48 × 30 → 40 × 14, printed with the mouth facing up</td></tr>
+  <tr><td><code>tray.stl</code></td><td class="n">2</td><td class="n">124 × 52 × 10</td>
+      <td>magnet tray; one 40 mm pocket on each face</td></tr>
+  <tr><td><code>liner_top.stl</code> / <code>liner_bottom.stl</code></td><td class="n">2</td>
+      <td class="n">130 × 52 × 1.5</td><td>identical — print the same file twice</td></tr>
+</table>
+
+<h3>Metal — from <code>metal/</code></h3>
+<table>
+  <tr><th>File</th><th>Qty</th><th class="n">Blank (mm)</th><th>Notes</th></tr>
+  <tr><td><code>clamshell-flat.dxf</code></td><td class="n">2</td><td class="n">150 × 110.3</td>
+      <td>2.0 mm mild steel / SPCC, laser cut, then folded</td></tr>
+</table>
+
+<h3>Bought</h3>
+<table>
+  <tr><th>Item</th><th>Qty</th><th>Notes</th></tr>
+  <tr><td>N52 magnet 20 × 10 × 5</td><td class="n">96</td><td>24 per face: 6 along × 4 across × 2 deep</td></tr>
+  <tr><td>Graphite plate 120 × 14 × 2</td><td class="n">2</td><td>side-wall electrodes</td></tr>
+  <tr><td>M3 × 16 bolt + nut</td><td class="n">8</td><td>through the lugs</td></tr>
+  <tr><td>Epoxy</td><td>—</td><td>liner to tray, magnets to tray</td></tr>
+</table>
+
+<h2>Key dimensions</h2>
+<table>
+  <tr><th>Feature</th><th class="n">Value</th><th>Why it matters</th></tr>
+  <tr><td>Channel (bore)</td><td class="n">40 × 14</td><td>sets current density and Dh = 20.7</td></tr>
+  <tr><td>Driven length L<sub>e</sub></td><td class="n">120</td><td>6 stations × 20; force ∝ L</td></tr>
+  <tr><td>Steel wall</td><td class="n">2.0</td><td>flux return + structure</td></tr>
+  <tr><td>Liner</td><td class="n">1.5</td><td>water barrier over the magnets</td></tr>
+  <tr><td>Magnetic gap</td><td class="n">17</td><td>2 × (1.5 liner + 2 × 5 tile) + 2 × 1 air</td></tr>
+  <tr><td>Bellmouth mouth</td><td class="n">48 × 30</td><td>flare narrows to the bore over 20 mm</td></tr>
+  <tr><td>Outlet</td><td class="n">straight</td><td>a diverging nozzle measurably costs speed — do not add one</td></tr>
+</table>
+
+<h2 class="pb">Build sequence</h2>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">1</span>Fold the two steel halves</h3>
+    <p>Laser-cut two blanks from <code>clamshell-flat.dxf</code>. Fold 90° along the dashed
+    bend lines — plate/wall at Y = ±28.0, wall/lug at Y = ±47.15.</p>
+    <div class="note">Bend the first one on a scrap coupon. K = 0.44 / R = 0.2 is nominal for
+    2 mm mild steel; if your brake differs, the lug holes move and the halves will not line up.</div>
+  </div>
+  <div class="pic"><img src="view_exploded.png" alt="exploded"></div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">2</span>Pot the magnets into the trays</h3>
+    <p>Each tray takes 24 tiles: 6 along the length, 4 across the width, 2 deep. Tiles butt
+    edge to edge — the 4 across fill the full 40 mm, which is the whole point: a gap leaves
+    part of the channel un-driven.</p>
+    <p><strong>Check polarity station by station with a compass before the epoxy sets.</strong>
+    All six stations on one face must point the same way, and the opposite face the other way.</p>
+  </div>
+  <div class="pic"><img src="view_trays.png" alt="magnet trays"></div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">3</span>Bond the liner onto each tray</h3>
+    <p>1.5 mm plate, epoxied to the magnet face. This is the water barrier — the steel and
+    the magnets must never see brine. Keep the bond line thin; 0.5 mm of epoxy between
+    magnets and water is 0.5 mm of extra magnetic gap.</p>
+    <div class="warn">Nickel-plated N52 corrodes fast in brine. If any tile sits proud of the
+    liner, the pump will fail at that spot, not at the end of the run.</div>
+  </div>
+  <div class="pic"><img src="view_half.png" alt="half open"></div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">4</span>Seat the electrodes</h3>
+    <p>Graphite plates 120 × 14 × 2 slide against the 40 mm side walls of the bore, flush with
+    the liner. They are the anode and cathode; keep them clear of the bellmouth so the entry
+    flow is not disturbed.</p>
+    <p>Wire all six stations in parallel. Compass-check the field direction against the
+    current direction once — if they fight, the pump pushes backwards.</p>
+  </div>
+  <div class="pic"><img src="view_channel.png" alt="open channel"></div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">5</span>Close the clamshell</h3>
+    <p>Drop the lower tray assembly into the bottom half, the upper one into the top half,
+    then bring the halves together along the mid-plane. The lug faces are <em>bare</em> —
+    no paint, no gasket between them — because they are the flux return path.</p>
+    <p>Fit 8 × M3 bolts and tighten in a cross pattern, a little at a time, so the halves
+    seat flat instead of rocking.</p>
+  </div>
+  <div class="pic"><img src="view_iso.png" alt="closed"></div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">6</span>Bolt on the bellmouth</h3>
+    <p>The printed inlet bolts to the front of the steel tube. Its curved flare takes the
+    48 × 30 mouth down to the 40 × 14 bore over 20 mm — this is what keeps the entry flow
+    attached.</p>
+    <p>Leave the outlet <strong>straight</strong>. A diverging nozzle was measured to drop
+    boat speed from 0.3 to 0.2 m/s through recirculation.</p>
+  </div>
+  <div class="pic"><img src="view_mouth.png" alt="inlet flare"></div>
+</div>
+
+<h2 class="pb">Fit and clearance</h2>
+<table>
+  <tr><th>Joint</th><th class="n">Clearance</th><th>Consequence if wrong</th></tr>
+  <tr><td>magnet in tray pocket</td><td class="n">0.2 per side</td><td>too tight cracks tiles on insertion</td></tr>
+  <tr><td>tray inside steel cavity</td><td class="n">0 (clamped)</td><td>slack tray rattles and wears the liner</td></tr>
+  <tr><td>liner to tray face</td><td class="n">0.5 bond line</td><td>thick epoxy = wider gap = weaker field</td></tr>
+  <tr><td>electrode to liner pocket</td><td class="n">0.1 per side</td><td>leaks past the electrode, current bypasses the water</td></tr>
+  <tr><td>M3 bolt in lug hole</td><td class="n">Ø3.4 hole</td><td>standard M3 clearance</td></tr>
+</table>
+
+<h2>Before you power it</h2>
+<ul class="chk">
+  <li>All 8 bolts seated; halves flush at the mid-plane, no visible gap</li>
+  <li>Compass check: every station on a face same direction, faces opposed</li>
+  <li>Liner unbroken over every magnet pocket — no nickel showing</li>
+  <li>Electrodes flush, not shorting to the steel through a scratch</li>
+  <li>Bore clear: shine a light down the inlet, no epoxy drips in the channel</li>
+  <li>Fuse in the supply line; keep runs under 2 minutes and ventilate (Cl₂)</li>
+</ul>
+
+<div class="note">
+  <strong>Model status.</strong> Dimensions above come from the shipped STEP file and were
+  measured back off the solid — not copied from the spec. The magnets are modelled as eight
+  120 mm bars rather than 96 loose tiles: same envelope and same 40 mm coverage, easier to
+  look at, but you cannot count individual tiles in these renders.
+</div>
+
+<footer>
+  Magnetide v21 · assembly guide generated from <code>Magnetide-v21-assembly.step</code> ·
+  17 solids · bore verified clear 40 × 14 × 120
+</footer>
+
+</body>
+</html>
