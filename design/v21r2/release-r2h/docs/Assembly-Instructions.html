@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magnetide v21-r2h — Assembly Instructions</title>
+<style>
+  @page { size: A4; margin: 15mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", Inter, system-ui, sans-serif; color: #1c1c1e;
+         line-height: 1.45; font-size: 10pt; margin: 0; }
+  h1 { font-size: 20pt; margin: 0 0 1.5mm; letter-spacing: -0.3px; }
+  h2 { font-size: 12.5pt; margin: 8mm 0 2.5mm; padding-bottom: 1.2mm;
+       border-bottom: 1.5px solid #1c1c1e; }
+  h3 { font-size: 10.5pt; margin: 5mm 0 1.2mm; }
+  .sub { color: #666; font-size: 9pt; margin-bottom: 5mm; }
+  table { border-collapse: collapse; width: 100%; margin: 2.5mm 0 4mm; font-size: 9pt; }
+  th, td { border: 1px solid #d2d2d2; padding: 1.5mm 2.2mm; text-align: left; vertical-align: top; }
+  th { background: #f2f2f0; font-weight: 600; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+  figure { margin: 3mm 0; page-break-inside: avoid; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid #e4e4e4; border-radius: 3px; }
+  figcaption { font-size: 8.5pt; color: #666; margin-top: 1.2mm; }
+  .step { display: flex; gap: 5mm; page-break-inside: avoid; margin: 4mm 0; }
+  .step .txt { flex: 1.15; min-width: 0; }
+  .step .pic { flex: 1; min-width: 0; }
+  .step .pic img { display: block; width: 100%; height: auto; border: 1px solid #e4e4e4; border-radius: 3px; }
+  .num { display: inline-block; width: 6mm; height: 6mm; border-radius: 50%;
+         background: #1c1c1e; color: #fff; text-align: center; line-height: 6mm;
+         font-size: 8.5pt; font-weight: 600; margin-right: 2mm; }
+  .note { background: #f7f7f4; border-left: 3px solid #1c1c1e; padding: 2.2mm 3mm;
+          margin: 2.5mm 0; font-size: 9pt; }
+  .warn { background: #fdf3f2; border-left: 3px solid #b5342c; padding: 2.2mm 3mm;
+          margin: 2.5mm 0; font-size: 9pt; }
+  code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 8.8pt;
+         background: #f4f4f2; padding: 0.3mm 1mm; border-radius: 2px; }
+  ul, ol { margin: 1.2mm 0 2.5mm 5mm; padding: 0; }
+  li { margin-bottom: 1mm; }
+  .chk li { list-style: none; }
+  .chk li::before { content: "☐  "; font-size: 10.5pt; }
+  footer { margin-top: 7mm; padding-top: 2.5mm; border-top: 1px solid #ddd; font-size: 8pt; color: #777; }
+  .pb { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<h1>Magnetide v21-r2h — Assembly Instructions</h1>
+<div class="sub">
+  Reynard Filbert Tang · Kelas 10.8, Kelompok 1 · MHD seawater pump<br>
+  Envelope 150 × 72 × 44 mm · bore 40 × 14 × 124 mm · all dimensions in mm · rev r2h
+</div>
+
+<figure>
+  <img src="../renders/view_r2h_exploded.png" alt="exploded view">
+  <figcaption>Exploded. Upper half, bottom to top: yoke, tray with its magnet cavity,
+  four magnet bars, 1 mm cap. Bellmouth left, rear block right, electrodes outboard.</figcaption>
+</figure>
+
+<h2>What you are building</h2>
+<p>
+Brine runs through a 40 × 14 mm bore. A 483 mT field crosses it, current flows
+between two graphite plates on the side walls, and the Lorentz force pushes the
+water out the straight end. The steel yoke is the magnetic return path; the
+plastic tray is the only thing keeping water away from the magnets.
+</p>
+
+<h3>Stack, per half</h3>
+<table>
+  <tr><th>z</th><th>Layer</th><th class="n">Thickness</th><th>Function</th></tr>
+  <tr><td>0 – 7</td><td>bore</td><td class="n">14 tall</td><td>water channel, 40 wide</td></tr>
+  <tr><td>7 – 8.5</td><td>tray floor</td><td class="n">1.5</td><td>only barrier between water and magnets</td></tr>
+  <tr><td>8.5 – 18.5</td><td>magnet cavity</td><td class="n">10</td><td>closed on all six sides</td></tr>
+  <tr><td>18.5 – 19.5</td><td>cap</td><td class="n">1.0</td><td>clamps the stack down, flush with steel</td></tr>
+  <tr><td>19.5 – 22</td><td>steel plate</td><td class="n">2.5</td><td>flux return</td></tr>
+</table>
+
+<h2>Build sequence</h2>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">1</span>Fold the two yokes</h3>
+    <p>Cut two blanks from <code>laser/clamshell-flat-2.5mm.dxf</code>. Fold 90° down at
+    ±28 (the walls), then fold the two lugs out 90° at ±47.96.</p>
+    <p>Check: 56 mm across the plate, 22 mm from plate face to lug face, <strong>two Ø3.4
+    holes per lug</strong> (13 mm apart) at x 40 and x 110.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">2</span>Stack the magnets into the tray cavity</h3>
+    <p>Eight tiles per row, four rows, two layers deep — 48 per face. Two 5 mm layers
+    make the 10 mm bar and fill the cavity 8.5 → 18.5.</p>
+    <p><strong>Compass-check every row before the epoxy sets.</strong> All four rows on
+    one face point the same way; the opposite face points the other way. One flipped
+    row stalls that quarter of the bore.</p>
+    <div class="note">Tiles are modelled as 9.7 mm bars with 0.3 mm clearance so they
+    drop in. Do not press-fit — a cracked tile corrodes from the crack.</div>
+  </div>
+  <div class="pic"><img src="../renders/view_r2h_cut.png" alt="magnet in cavity"></div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">3</span>Cap it</h3>
+    <p>Drop the 1 mm cap into the ledge in the tray rim. It sits on the magnets with its
+    top face flush with the steel inner face, and stops the stack lifting when the field
+    pulls. A bead of epoxy at the rim; never a puddle — epoxy in the bore is unreachable.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">4</span>Seat the electrodes</h3>
+    <p>Each 134 × 14 × 2 plate slides into the 1 mm groove from the end. Its top shoulder
+    hides behind 0.5 mm of floor; the full 14 mm face is exposed — 124 × 14 =
+    <strong>1736 mm²</strong> per electrode.</p>
+    <p>Push each plate until its end sits 5 mm inside the bellmouth or rear-block pocket.
+    That pocket is the end seal.</p>
+  </div>
+  <div class="pic"><img src="../renders/view_r2h_cut.png" alt="electrode in groove"></div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">5</span>Bellmouth and rear block</h3>
+    <p>Two 2 mm pegs each, into the blind holes in the tray end faces. The bellmouth takes
+    the 48 × 30 mouth down to the bore over 20 mm.</p>
+    <p>At the outlet, drill through the last 0.4 mm of the lead channel, feed the two wires
+    out, epoxy the hole closed around them. Keep the outlet straight.</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="txt">
+    <h3><span class="num">6</span>Close the yoke</h3>
+    <p>Lower tray into the bottom yoke, upper into the top, bring the halves together so
+    the lug faces meet. Eight M3 through the lugs — two per lug, 13 mm apart — tightened in a cross
+    pattern a little at a time.</p>
+    <p>This is a <strong>stack clamp</strong>: the tray rim lands on the steel plate above,
+    the mirrored tray butts it at z 0, and the bolts close the sandwich. Sideways there
+    is 0.15 mm a side of clearance and nothing clamps it.</p>
+    <div class="note"><strong>If the tray rattles sideways</strong>, shim it — closed-cell
+    foam strip 0.3–0.5 mm on the <em>outer wall faces</em> only, outboard of the tray. Never
+    between cap and plate: that face is the magnet's path into the steel, and foam there is
+    an air gap in series with every magnet. Never open-cell foam, which wicks brine.</div>
+  </div>
+  <div class="pic"><img src="../renders/view_r2h_assembled.png" alt="closed yoke"></div>
+</div>
+
+<h2>Watertight: the three paths that were open</h2>
+<table>
+  <tr><th>Leak path</th><th>What was wrong</th><th>Fix in r2h</th></tr>
+  <tr><td>electrode groove roof</td>
+      <td>2.2 mm groove cut 3.0 deep from z 7.0, so its ceiling sat at z 10.0 —
+      <strong>1.5 mm above the cavity floor at 8.5</strong>. A gutter into the magnet pocket.</td>
+      <td>groove 1.0 deep (7.0 → 8.0), ceiling 0.5 mm below the floor</td></tr>
+  <tr><td>end-block peg holes</td>
+      <td>holes 2.6 mm deep in a 2.0 mm wall — through-holes into the cavity at both ends</td>
+      <td>blind 1.6 deep, 0.4 mm of plastic behind, 2.3 mm lead-in</td></tr>
+  <tr><td>magnet lead exit</td>
+      <td>full-length bore opened the cavity to the outside</td>
+      <td>blind channel, 0.4 mm left; drill and epoxy at wiring time</td></tr>
+</table>
+
+<h2>Before you power it</h2>
+<ul class="chk">
+  <li>Both halves flush, 8 bolts seated in the lugs, no gap at the lug faces</li>
+  <li>Compass: every row on a face points the same way, the two faces oppose</li>
+  <li>Tray floor unbroken over the whole magnet area — hold it up to a light</li>
+  <li>Electrodes fully home, not shorting to steel through a scratch</li>
+  <li>Lead exit drilled, wired, epoxied; bore clear down its whole 124 mm</li>
+  <li>Fuse in the supply line; runs under 2 minutes, ventilated (Cl₂)</li>
+</ul>
+
+<footer>
+  Magnetide v21-r2h · assembly instructions · model from
+  <code>Magnetide-v21r2h-assembly.step</code> · 18 solids · bore verified clear
+</footer>
+
+</body>
+</html>
