@@ -15,8 +15,9 @@ electrodes, and the Lorentz force drives the water out the straight end.
 | `Magnetide-v21r2h-assembly.step` | Full assembly, 18 solids, mm units. Opens in Fusion/SolidWorks/FreeCAD. |
 | `Magnetide-v21r2h-assembly.f3d` | Fusion archive, assembled, coloured by material. |
 | `Magnetide-v21r2h-EXPLODED.f3d` | Same model already exploded along Z. |
-| `docs/Assembly-Instructions.pdf` | 6-step build sequence, watertight notes, pre-power checklist. |
+| `docs/Build-Instructions.pdf` | Picture-by-picture build manual — 7 numbered steps, one render each, pre-power checklist. |
 | `docs/Design-Document.pdf` | Part list, sizes, tolerances, magnetic/electrical design, revision history. |
+| `docs/archive/` | Earlier text-style assembly instructions (superseded). |
 | `print/*.stl` | Four printable parts. Print settings are in the assembly guide. |
 | `laser/clamshell-flat-2.5mm.dxf` | Folded yoke blank — 2.5 mm mild steel, stepped outline for the lugs. |
 | `renders/` | Exploded, assembled and cutaway renders + `build_report.json`. |
