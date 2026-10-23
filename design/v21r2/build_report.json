@@ -1,0 +1,184 @@
+{
+ "Steel_Top": {
+  "size_mm": [
+   150.0,
+   72.0,
+   22.0
+  ],
+  "volume_mm3": 55362.1,
+  "solids": 1
+ },
+ "Steel_Bottom": {
+  "size_mm": [
+   150.0,
+   72.0,
+   22.0
+  ],
+  "volume_mm3": 55362.1,
+  "solids": 1
+ },
+ "Tray_Top": {
+  "size_mm": [
+   124.0,
+   52.0,
+   17.0
+  ],
+  "volume_mm3": 26367.7,
+  "solids": 1
+ },
+ "Tray_Bottom": {
+  "size_mm": [
+   124.0,
+   52.0,
+   17.0
+  ],
+  "volume_mm3": 26367.7,
+  "solids": 1
+ },
+ "Cap_Top": {
+  "size_mm": [
+   124.0,
+   52.0,
+   8.0
+  ],
+  "volume_mm3": 12041.7,
+  "solids": 1
+ },
+ "Cap_Bottom": {
+  "size_mm": [
+   124.0,
+   52.0,
+   8.0
+  ],
+  "volume_mm3": 12041.7,
+  "solids": 1
+ },
+ "Electrode_P": {
+  "size_mm": [
+   120.0,
+   2.0,
+   14.0
+  ],
+  "volume_mm3": 3360.0,
+  "solids": 1
+ },
+ "Electrode_N": {
+  "size_mm": [
+   120.0,
+   2.0,
+   14.0
+  ],
+  "volume_mm3": 3360.0,
+  "solids": 1
+ },
+ "Bellmouth": {
+  "size_mm": [
+   18.0,
+   52.0,
+   40.0
+  ],
+  "volume_mm3": 22387.2,
+  "solids": 1
+ },
+ "Rear_Block": {
+  "size_mm": [
+   8.5,
+   52.0,
+   40.0
+  ],
+  "volume_mm3": 9260.0,
+  "solids": 1
+ },
+ "MAG_N_0": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_N_1": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_N_2": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_N_3": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_S_0": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_S_1": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_S_2": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_S_3": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "_electrode_vs_tray_volume": 0.0,
+ "_cap_vs_tray_volume": 0.0,
+ "_aperture_probe_hits": [],
+ "_channel_clear": true,
+ "_height_budget": {
+  "bore": 14.0,
+  "per side": 13.0,
+  "steel": 4.0,
+  "sum": 44.0,
+  "H": 44.0
+ },
+ "_magnet_tiles": 96,
+ "_step": "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\Magnetide-v21r2-assembly.step",
+ "_render_stl_dir": "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\render",
+ "_stl": [
+  "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\plastic\\tray.stl",
+  "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\plastic\\cap.stl",
+  "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\plastic\\bellmouth.stl",
+  "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\plastic\\rear_block.stl"
+ ]
+}
