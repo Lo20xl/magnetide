@@ -1,0 +1,147 @@
+{
+ "Steel_Top": {
+  "size_mm": [
+   150.0,
+   72.0,
+   20.5
+  ],
+  "volume_mm3": 30314.7,
+  "solids": 1
+ },
+ "Steel_Bottom": {
+  "size_mm": [
+   150.0,
+   72.0,
+   20.5
+  ],
+  "volume_mm3": 30314.7,
+  "solids": 1
+ },
+ "Tray_Top": {
+  "size_mm": [
+   124.0,
+   52.0,
+   10.0
+  ],
+  "volume_mm3": 27040.0,
+  "solids": 1
+ },
+ "Tray_Bottom": {
+  "size_mm": [
+   124.0,
+   52.0,
+   10.0
+  ],
+  "volume_mm3": 27040.0,
+  "solids": 1
+ },
+ "Liner_Top": {
+  "size_mm": [
+   130.0,
+   52.0,
+   1.5
+  ],
+  "volume_mm3": 10140.0,
+  "solids": 1
+ },
+ "Liner_Bottom": {
+  "size_mm": [
+   130.0,
+   52.0,
+   1.5
+  ],
+  "volume_mm3": 10140.0,
+  "solids": 1
+ },
+ "Electrode_P": {
+  "size_mm": [
+   120.0,
+   2.0,
+   14.0
+  ],
+  "volume_mm3": 3360.0,
+  "solids": 1
+ },
+ "Electrode_N": {
+  "size_mm": [
+   120.0,
+   2.0,
+   14.0
+  ],
+  "volume_mm3": 3360.0,
+  "solids": 1
+ },
+ "Bellmouth": {
+  "size_mm": [
+   20.0,
+   56.0,
+   41.0
+  ],
+  "volume_mm3": 29194.7,
+  "solids": 1
+ },
+ "MAG_N_0": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_N_1": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_N_2": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_S_0": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_S_1": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "MAG_S_2": {
+  "size_mm": [
+   120.0,
+   10.0,
+   10.0
+  ],
+  "volume_mm3": 12000.0,
+  "solids": 1
+ },
+ "_aperture_probe_hits": [],
+ "_channel_clear": true,
+ "_step": "C:\\Users\\tangy\\Desktop\\magnetide-v22-assembly\\Magnetide-v21-assembly.step",
+ "_render_stl_dir": "C:\\Users\\tangy\\Desktop\\magnetide-v22-assembly\\render",
+ "_stl": [
+  "C:\\Users\\tangy\\Desktop\\magnetide-v22-assembly\\plastic\\bellmouth.stl",
+  "C:\\Users\\tangy\\Desktop\\magnetide-v22-assembly\\plastic\\tray.stl",
+  "C:\\Users\\tangy\\Desktop\\magnetide-v22-assembly\\plastic\\liner_top.stl",
+  "C:\\Users\\tangy\\Desktop\\magnetide-v22-assembly\\plastic\\liner_bottom.stl"
+ ]
+}
