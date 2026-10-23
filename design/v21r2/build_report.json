@@ -9,7 +9,7 @@
    0.0,
    22.0
   ],
-  "volume_mm3": 41443.4,
+  "volume_mm3": 38003.4,
   "solids": 1
  },
  "Steel_Bottom": {
@@ -22,33 +22,33 @@
    -22.0,
    0.0
   ],
-  "volume_mm3": 41443.4,
+  "volume_mm3": 38003.4,
   "solids": 1
  },
  "Tray_Top": {
   "size_mm": [
    124.0,
-   51.5,
+   50.7,
    19.5
   ],
   "z_mm": [
    0.0,
    19.5
   ],
-  "volume_mm3": 28189.0,
+  "volume_mm3": 28097.4,
   "solids": 1
  },
  "Tray_Bottom": {
   "size_mm": [
    124.0,
-   51.5,
+   50.7,
    19.5
   ],
   "z_mm": [
    -19.5,
    0.0
   ],
-  "volume_mm3": 28189.0,
+  "volume_mm3": 28097.4,
   "solids": 1
  },
  "Cap_Top": {
@@ -81,26 +81,26 @@
   "size_mm": [
    134.0,
    2.0,
-   20.0
+   16.0
   ],
   "z_mm": [
-   -10.0,
-   10.0
+   -8.0,
+   8.0
   ],
-  "volume_mm3": 5360.0,
+  "volume_mm3": 4288.0,
   "solids": 1
  },
  "Electrode_N": {
   "size_mm": [
    134.0,
    2.0,
-   20.0
+   16.0
   ],
   "z_mm": [
-   -10.0,
-   10.0
+   -8.0,
+   8.0
   ],
-  "volume_mm3": 5360.0,
+  "volume_mm3": 4288.0,
   "solids": 1
  },
  "Bellmouth": {
@@ -113,7 +113,7 @@
    -19.5,
    19.5
   ],
-  "volume_mm3": 20736.6,
+  "volume_mm3": 20264.4,
   "solids": 1
  },
  "Rear_Block": {
@@ -126,7 +126,7 @@
    -19.5,
    19.5
   ],
-  "volume_mm3": 7366.4,
+  "volume_mm3": 7411.6,
   "solids": 1
  },
  "MAG_N_0": {
@@ -233,6 +233,8 @@
   "volume_mm3": 11640.0,
   "solids": 1
  },
+ "_leak_probes": [],
+ "_wall_probes": [],
  "_probe_hits": [],
  "_overlaps": {
   "Electrode_P_vs_Tray_Top": 0.0,
@@ -271,16 +273,28 @@
    true
   ],
   [
-   "electrode_buried_3mm",
+   "electrode_buried_1mm",
    true
   ],
   [
    "bore_clear",
    true
+  ],
+  [
+   "groove_ceiling_below_cavity_floor",
+   true
+  ],
+  [
+   "no_groove_roof_gap",
+   true
+  ],
+  [
+   "peg_holes_blind",
+   true
   ]
  ],
  "_all_checks_pass": true,
- "_step": "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\Magnetide-v21r2e-assembly.step",
+ "_step": "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\Magnetide-v21r2g-assembly.step",
  "_render_stl_dir": "C:\\Users\\tangy\\Desktop\\magnetide-v21r2-assembly\\render",
  "_steel_blank": {
   "t": 2.5,

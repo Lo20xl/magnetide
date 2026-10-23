@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Magnetide v21-r2e — Manufacturing &amp; Assembly</title>
+<title>Magnetide v21-r2g — Manufacturing &amp; Assembly</title>
 <style>
   @page { size: A4; margin: 15mm 13mm; }
   * { box-sizing: border-box; }
@@ -22,7 +22,7 @@
                border-radius: 3px; }
   figcaption { font-size: 8.5pt; color: #666; margin-top: 1.2mm; }
   .step { display: flex; gap: 5mm; page-break-inside: avoid; margin: 4mm 0; }
-  .step .txt { flex: 1.1; min-width: 0; }
+  .step .txt { flex: 1.15; min-width: 0; }
   .step .pic { flex: 1; min-width: 0; }
   .step .pic img { display: block; width: 100%; height: auto; border: 1px solid #e4e4e4;
                    border-radius: 3px; }
@@ -42,13 +42,11 @@
   footer { margin-top: 7mm; padding-top: 2.5mm; border-top: 1px solid #ddd;
            font-size: 8pt; color: #777; }
   .pb { page-break-before: always; }
-  .two { display: flex; gap: 4mm; }
-  .two > div { flex: 1; min-width: 0; }
 </style>
 </head>
 <body>
 
-<h1>Magnetide v21-r2e — Manufacturing &amp; Assembly</h1>
+<h1>Magnetide v21-r2g — Manufacturing &amp; Assembly</h1>
 <div class="sub">
   Reynard Filbert Tang · Kelas 10.8, Kelompok 1 · MHD seawater pump<br>
   Envelope 150 × 72 × 44 mm · bore 40 × 14 × 124 mm · all dimensions in mm<br>
@@ -59,34 +57,27 @@
 <p>
 Brine runs through a 40 × 14 mm bore. A 483 mT field crosses it, current flows
 between two graphite plates on the side walls, and the Lorentz force pushes the
-water out the straight end. The steel is a folded 2.5 mm clamshell and it is the
-magnetic return path — not a cosmetic box.
+water out the straight end. The yoke is the magnetic return path and the tray is
+the only thing keeping water away from the magnets — both get checked
+automatically every time the model rebuilds.
 </p>
 
 <figure>
-  <img src="view_r2e_exploded.png" alt="exploded assembly">
-  <figcaption>Exploded, upper half. Bottom to top: steel shell, tray with its magnet
-  cavity, four magnet bars, 1 mm cap, and the mating steel half. Bellmouth at the
-  inlet (left), rear block with the lead exit at the outlet (right).</figcaption>
+  <img src="view_r2g_cut.png" alt="cutaway through the bore">
+  <figcaption>Cut on the centre plane. Bore at the bottom, 1.5 mm tray floor above
+  it, magnet in the closed cavity, 1 mm cap between magnet and steel plate. The
+  floor is continuous over the electrode groove.</figcaption>
 </figure>
 
 <h3>Stack, per half (z from the mid-plane)</h3>
 <table>
   <tr><th>z</th><th>Layer</th><th class="n">Thickness</th><th>Function</th></tr>
   <tr><td>0 – 7</td><td>bore</td><td class="n">14 tall</td><td>water channel, 40 wide</td></tr>
-  <tr><td>7 – 8.5</td><td>tray floor</td><td class="n">1.5</td><td>the only thing between water and magnets</td></tr>
-  <tr><td>8.5 – 18.5</td><td>magnet in cavity</td><td class="n">10</td><td>walled in on all four sides</td></tr>
-  <tr><td>18.5 – 19.5</td><td>cap</td><td class="n">1.0</td><td>locks the magnets down, flush with the steel</td></tr>
+  <tr><td>7 – 8.5</td><td>tray floor</td><td class="n">1.5</td><td>the only barrier between water and magnets</td></tr>
+  <tr><td>8.5 – 18.5</td><td>magnet cavity</td><td class="n">10</td><td>closed on all six sides</td></tr>
+  <tr><td>18.5 – 19.5</td><td>cap</td><td class="n">1.0</td><td>locks the stack down, flush with the steel</td></tr>
   <tr><td>19.5 – 22</td><td>steel plate</td><td class="n">2.5</td><td>flux return</td></tr>
 </table>
-
-<figure>
-  <img src="view_r2e_section.png" alt="section through the bore">
-  <figcaption>Same model cut on the centre plane. You are looking at the bore, the
-  1.5 mm tray floor above it, the magnet sitting in the cavity, and the 1 mm cap
-  between the magnet and the steel. The red and blue faces are the two magnet
-  polarities.</figcaption>
-</figure>
 
 <h2>Parts</h2>
 
@@ -95,187 +86,200 @@ magnetic return path — not a cosmetic box.
   <tr><th>File</th><th class="n">Qty</th><th>Material</th><th>Notes</th></tr>
   <tr><td><code>clamshell-flat-2.5mm.dxf</code></td><td class="n">2</td>
       <td>2.5 mm mild steel (DC01 / SPCC / AISI 1008)</td>
-      <td>Blank <strong>107.83 × 150</strong>. Laser cut, 8 × Ø3.4 holes, then folded twice.
-      One blank per half; mirror one after folding.</td></tr>
+      <td>Yoke blank <strong>107.83 × 150</strong>. Plate plus two side walls, and
+      the split-line flange cropped into <strong>four lugs of 16 mm</strong> per side —
+      the lug pattern, not a continuous band. 317 g per half.</td></tr>
 </table>
 
 <h3>Printed — <code>plastic/</code></h3>
 <table>
   <tr><th>File</th><th class="n">Qty</th><th class="n">Size</th><th>Notes</th></tr>
-  <tr><td><code>tray.stl</code></td><td class="n">2</td><td class="n">124 × 51.5 × 19.5</td>
-      <td>Magnet cavity 120 × 40 × 10 with a 1 mm ledge for the cap. Print the floor side down.</td></tr>
+  <tr><td><code>tray.stl</code></td><td class="n">2</td><td class="n">124 × 50.7 × 19.5</td>
+      <td>Closed magnet cavity, 1 mm cap ledge, 1 mm electrode groove. Floor down.</td></tr>
   <tr><td><code>cap.stl</code></td><td class="n">2</td><td class="n">121.7 × 42.7 × 1.0</td>
-      <td>Thin lid. Print flat, 100 % infill — it is a clamp, not a shell.</td></tr>
-  <tr><td><code>bellmouth.stl</code></td><td class="n">1</td><td class="n">20 × 52 × 39</td>
-      <td>48 × 30 mouth closing to 40 × 14. Print mouth-up, supports only in the bore.</td></tr>
-  <tr><td><code>rear_block.stl</code></td><td class="n">1</td><td class="n">5.5 × 52 × 39</td>
-      <td>Outlet. Has the 4.4 mm lead exit; keep that hole clear.</td></tr>
+      <td>Thin lid, 100 % infill — a clamp, not a shell.</td></tr>
+  <tr><td><code>bellmouth.stl</code></td><td class="n">1</td><td class="n">20 × 49.7 × 39</td>
+      <td>48 × 30 mouth to 40 × 14 over 20 mm.</td></tr>
+  <tr><td><code>rear_block.stl</code></td><td class="n">1</td><td class="n">5.5 × 49.7 × 39</td>
+      <td>Outlet, 5 mm thick. Carries the lead channel.</td></tr>
 </table>
 
 <h3>Bought</h3>
 <table>
   <tr><th>Item</th><th class="n">Qty</th><th>Notes</th></tr>
   <tr><td>N52 tile 20 × 10 × 5, nickel plated</td><td class="n">96</td>
-      <td>48 per face: 6 along × 4 across × 2 deep. Two tiles stacked = one 10 mm bar.</td></tr>
+      <td>48 per face: 6 along × 4 across × 2 deep.</td></tr>
   <tr><td>Graphite plate, 134 × 14 × 2</td><td class="n">2</td>
-      <td>Anode and cathode. 3 mm of each end is buried in plastic — 124 mm is wetted.</td></tr>
+      <td>124 mm wetted; ends sit 5 mm inside the end blocks.</td></tr>
   <tr><td>M3 × 16 bolt + nut + washer</td><td class="n">8</td>
-      <td>Through the folded flanges at the split line.</td></tr>
-  <tr><td>M3 grub screw or 3 mm dowel</td><td class="n">2</td>
-      <td>Optional registration pin — see step 6.</td></tr>
-  <tr><td>Epoxy (slow, 30 min+)</td><td class="n">—</td>
-      <td>Magnets to tray. <strong>Not</strong> on the flange faces.</td></tr>
+      <td>Through the yoke lugs at the split line.</td></tr>
+  <tr><td>Epoxy (30 min+)</td><td class="n">—</td>
+      <td>Magnets to tray, and the lead exit after wiring.</td></tr>
 </table>
 
 <h2 class="pb">Manufacturing</h2>
 
-<h3>Steel: laser + 2 folds</h3>
+<h3>Steel: laser + 4 folds</h3>
 <table>
   <tr><th>Parameter</th><th class="n">Value</th><th>Where it comes from</th></tr>
-  <tr><td>Sheet thickness</td><td class="n">2.5</td><td>one gauge for the whole half — walls and plate</td></tr>
-  <tr><td>Flat blank</td><td class="n">107.83 × 150</td><td>56 plate + 2 × (19.96 wall + 5.96 flange)</td></tr>
-  <tr><td>Inside bend radius</td><td class="n">0.2</td><td>sharp; a knife-edge die is fine at this gauge</td></tr>
-  <tr><td>K-factor</td><td class="n">0.44</td><td>typical for mild steel at R/t ≈ 0.08</td></tr>
-  <tr><td>Bend allowance</td><td class="n">2.042</td><td>(R + K·t)·π/2 per 90° bend</td></tr>
-  <tr><td>Fold line, from the blank edge</td><td class="n">47.96</td><td>marked on the DXF FOLD layer</td></tr>
+  <tr><td>Sheet thickness</td><td class="n">2.5</td><td>one gauge, plate and wall</td></tr>
+  <tr><td>Flat blank</td><td class="n">107.83 × 150</td><td>56 plate + 2 × (19.96 wall + 5.96 lug)</td></tr>
+  <tr><td>Fold 1 — wall</td><td class="n">at ±28</td><td>down 90°, forms the bore side</td></tr>
+  <tr><td>Fold 2 — lug flange</td><td class="n">at ±47.96</td><td>out 90°, lugs only, 4 × 16 mm per side</td></tr>
+  <tr><td>Bend allowance</td><td class="n">2.042</td><td>K = 0.44, R<sub>in</sub> = 0.2</td></tr>
   <tr><td>Mass per half</td><td class="n">317 g</td><td>7.85 g/cm³</td></tr>
 </table>
 
 <div class="note">
-  <strong>Cut one test blank first.</strong> K = 0.44 is nominal. If your brake gives
-  K = 0.40 the flange shortens by 0.3 mm and the bolt holes drift — measure the folded
-  part, not the drawing, before you cut the second blank.
-</div>
-
-<div class="warn">
-  <strong>The fold must be 90° up on both edges, and both flanges must land on the
-  mid-plane.</strong> Those two flange faces are the magnetic return path: they are
-  bolted bare, steel on steel, no paint and no gasket. 1.5 mm of anything in that joint
-  is 1.5 mm of air gap in series with the whole field.
+  <strong>Cut one test blank first.</strong> K = 0.44 is nominal. At K = 0.40 the lug
+  holes drift 0.3 mm and the two halves stop lining up — measure the folded part before
+  cutting the second blank.
 </div>
 
 <h3>Printing</h3>
 <table>
   <tr><th>Part</th><th class="n">Layer</th><th class="n">Walls</th><th class="n">Infill</th><th>Orientation</th></tr>
-  <tr><td>tray</td><td class="n">0.2</td><td class="n">4</td><td class="n">40 %</td><td>floor down; the cavity prints open-side up with no supports</td></tr>
-  <tr><td>cap</td><td class="n">0.16</td><td class="n">3</td><td class="n">100 %</td><td>flat — it is 1 mm, any warp is a leak path</td></tr>
-  <tr><td>bellmouth</td><td class="n">0.2</td><td class="n">3</td><td class="n">25 %</td><td>mouth up, bore vertical</td></tr>
+  <tr><td>tray</td><td class="n">0.2</td><td class="n">4</td><td class="n">40 %</td><td>floor down, cavity open-side up, no supports</td></tr>
+  <tr><td>cap</td><td class="n">0.16</td><td class="n">3</td><td class="n">100 %</td><td>flat</td></tr>
+  <tr><td>bellmouth</td><td class="n">0.2</td><td class="n">3</td><td class="n">25 %</td><td>mouth up</td></tr>
   <tr><td>rear_block</td><td class="n">0.2</td><td class="n">4</td><td class="n">40 %</td><td>flat face down</td></tr>
 </table>
+
+<h2>Watertight: the three paths that were open</h2>
 <p>
-PLA is fine for a demo run; PETG if the water is warm or the pump runs long. The tray
-floor is a 1.5 mm water barrier — <strong>if it leaks, the magnets are gone</strong>,
-so keep that face solid and inspect it against a light before assembly.
+The magnet cavity had three ways in. All three are closed, and each one is a hard
+assert in the build script — the model refuses to export if any reopens.
 </p>
+
+<table>
+  <tr><th>Leak path</th><th>What was wrong</th><th>Fix</th></tr>
+  <tr><td>electrode groove roof</td>
+      <td>the 2.2 mm groove was cut 3.0 deep from z 7.0, so its ceiling sat at
+      <strong>z 10.0 — 1.5 mm above the cavity floor at 8.5</strong>. The groove ran
+      the full 124 mm with an open top: a gutter into the magnet pocket.</td>
+      <td>groove cut <strong>1.0 deep</strong> (7.0 → 8.0), ceiling 0.5 mm below the
+      cavity floor. 0.5 mm of floor covers the electrode lip, 4.85 mm of solid wall
+      sits behind it.</td></tr>
+  <tr><td>end-block peg holes</td>
+      <td>pegs were located with holes drilled 2.6 mm into a 2.0 mm end wall — both
+      ends were <strong>through-holes into the cavity</strong>.</td>
+      <td>blind holes <strong>1.6 deep</strong>, 0.4 mm of plastic left behind, plus a
+      2.3 mm lead-in. Pegs shortened to 2.0 mm.</td></tr>
+  <tr><td>magnet lead exit</td>
+      <td>a full-length bore through the rear block opened the cavity to the outside.</td>
+      <td>blind channel from the outside of the outlet wall, stopping <strong>0.4 mm
+      short</strong>. You drill it through at build time and epoxy around the wire.</td></tr>
+</table>
+
+<div class="note">
+  <strong>One joint is still plastic-on-plastic:</strong> the two trays butt at z 0
+  with no gasket, because that is the v21-r2e arrangement. It is a face-to-face
+  butt joint at the bore ceiling, so it leaks at most a weep. If this pump ever runs
+  pressurised, put a 1 mm gasket there — it costs 1 mm of lug gap and some field.
+</div>
 
 <h2 class="pb">Build sequence</h2>
 
 <div class="step">
   <div class="txt">
-    <h3><span class="num">1</span>Fold the two steel halves</h3>
-    <p>Cut two blanks from <code>clamshell-flat-2.5mm.dxf</code>. Fold 90° along both
-    dashed lines: fold 1 at 47.96 from the edge (wall), fold 2 at 5.96 further in (flange).</p>
-    <p>Check the folded part: 56 mm across the plate, 22 mm from the plate to the flange
-    face, holes on the split line.</p>
+    <h3><span class="num">1</span>Fold the two yokes</h3>
+    <p>Cut two blanks. Fold 90° down at ±28 (the walls), then fold the lugs out 90°
+    at ±47.96. Four lugs per side, 16 mm long, one Ø3.4 hole each.</p>
+    <p>Check: 56 mm across the plate, 22 mm plate face to lug face, holes on the
+    split line at ±50.94.</p>
   </div>
 </div>
 
 <div class="step">
   <div class="txt">
     <h3><span class="num">2</span>Stack the magnets into the tray cavity</h3>
-    <p>The tray is a cup, not a plate: floor on the bottom, walls on all four sides.
-    Eight tiles per row, four rows, two layers deep — 48 per face. Two layers of 5 mm
-    tiles = one 10 mm bar, filling the cavity 8.5 → 18.5.</p>
+    <p>Eight tiles per row, four rows, two layers deep — 48 per face. Two 5 mm layers
+    make the 10 mm bar and fill the cavity 8.5 → 18.5.</p>
     <p><strong>Compass-check every row before the epoxy sets.</strong> All four rows on
-    one face point the same way; the opposite face points the other way. If one row is
-    flipped the pump stalls in that quarter of the bore.</p>
-    <div class="note">Tiles are modelled as 9.7 mm wide bars with 0.3 mm clearance so they
-    drop in. Do not press-fit them — a cracked tile is a dead tile and the nickel will
-    corrode from the crack.</div>
+    one face point the same way; the opposite face points the other way.</p>
+    <div class="note">Tiles are modelled as 9.7 mm bars with 0.3 mm clearance so they
+    drop in. Do not press-fit — a cracked tile corrodes from the crack.</div>
   </div>
-  <div class="pic"><img src="view_r2e_exploded.png" alt="magnet stack"></div>
+  <div class="pic"><img src="view_r2g_cut.png" alt="magnet in cavity"></div>
 </div>
 
 <div class="step">
   <div class="txt">
     <h3><span class="num">3</span>Cap it</h3>
-    <p>Drop the 1 mm cap into the ledge in the tray rim. It sits on the magnets, its top
-    face flush with the steel inner face. It is what stops the stack lifting when the
-    field pulls.</p>
-    <p>No glue needed if the fit is right; a bead around the rim is acceptable, a puddle
-    is not — excess epoxy that runs into the bore is a flow obstruction you cannot reach.</p>
+    <p>Drop the 1 mm cap into the ledge in the tray rim. It sits on the magnets, top
+    face flush with the steel inner face, and stops the stack lifting when the field
+    pulls. A bead of epoxy at the rim, never a puddle — epoxy in the bore is
+    unreachable once closed.</p>
   </div>
 </div>
 
 <div class="step">
   <div class="txt">
     <h3><span class="num">4</span>Seat the electrodes</h3>
-    <p>Each 134 × 14 × 2 graphite plate slides into the 2.2 mm slot in the tray wall from
-    the end. 3 mm of its height is buried in the tray, 14 mm is exposed to the water —
-    that exposed 124 × 14 = 1736 mm² is the working area.</p>
-    <p>Push each plate in until its end sits 5 mm inside the bellmouth or rear block
-    pocket. That pocket is the seal: it holds the end and keeps water from sneaking
-    behind the plate.</p>
+    <p>Each 134 × 14 × 2 plate slides into the 1 mm groove from the end. Its top
+    shoulder hides behind 0.5 mm of floor; the full 14 mm face is exposed —
+    124 × 14 = <strong>1736 mm²</strong> per electrode.</p>
+    <p>Push each plate until its end sits 5 mm inside the bellmouth or rear-block
+    pocket. That pocket is the end seal.</p>
   </div>
-  <div class="pic"><img src="view_r2e_section.png" alt="electrode seat"></div>
+  <div class="pic"><img src="view_r2g_cut.png" alt="electrode in groove"></div>
 </div>
 
 <div class="step">
   <div class="txt">
     <h3><span class="num">5</span>Bellmouth and rear block</h3>
-    <p>Four 3 mm pegs each. The bellmouth takes the 48 × 30 mouth down to the 40 × 14
-    bore over 20 mm — this is what keeps the inlet flow attached.</p>
-    <p>The rear block carries the <strong>4.4 mm lead exit</strong> at 13.5 mm off the
-    mid-plane, one per half. Thread the magnet wires out through it and seal the hole
-    with epoxy after. Leave the outlet straight: a diverging nozzle was measured to drop
-    boat speed from 0.3 to 0.2 m/s through recirculation.</p>
+    <p>Two 2 mm pegs each, into the blind holes in the tray end faces. The bellmouth
+    takes the 48 × 30 mouth to the bore over 20 mm.</p>
+    <p>At the outlet, drill through the last 0.4 mm of the lead channel, feed the two
+    wires out, epoxy the hole closed around them. Keep the outlet straight — a
+    diverging nozzle measured 0.3 → 0.2 m/s.</p>
   </div>
 </div>
 
 <div class="step">
   <div class="txt">
-    <h3><span class="num">6</span>Close the clamshell</h3>
-    <p>Lower tray assembly into the bottom half, upper into the top half, then bring the
-    halves together. Drop 8 × M3 through the flanges and tighten in a cross pattern, a
-    little at a time, so they seat flat instead of rocking.</p>
-    <p>The flanges are 8 mm strips meeting edge to edge around Ø3.4 holes, so location
-    comes from the bolt shanks. If the pump will be knocked around, add two 3 mm dowels
-    through the flanges before final torque.</p>
+    <h3><span class="num">6</span>Close the yoke</h3>
+    <p>Lower tray into the bottom yoke, upper into the top, bring the halves together
+    so the lug faces meet. Eight M3 through the lugs, tightened in a cross pattern a
+    little at a time.</p>
+    <p>The lugs are 8 mm strips around Ø3.4 holes, so location comes from the bolt
+    shanks. Add two 3 mm dowels through the lug pairs if it will get knocked around.</p>
   </div>
-  <div class="pic"><img src="view_r2e_assembled.png" alt="closed"></div>
+  <div class="pic"><img src="view_r2g_assembled.png" alt="closed yoke"></div>
 </div>
 
 <h2>Fit and clearance</h2>
 <table>
   <tr><th>Joint</th><th class="n">Clearance</th><th>Consequence if wrong</th></tr>
-  <tr><td>magnet in tray cavity</td><td class="n">0.3 per side</td><td>press fit cracks tiles</td></tr>
-  <tr><td>cap in rim ledge</td><td class="n">0.15 per side</td><td>cap lifts, magnets float up into the steel</td></tr>
-  <tr><td>tray in steel cavity</td><td class="n">0.1 per side</td><td>tray rattles, wears through the 1.5 mm floor</td></tr>
-  <tr><td>electrode in slot</td><td class="n">0.2 total</td><td>water bypasses the plate, current skips the bore</td></tr>
+  <tr><td>magnet in cavity</td><td class="n">0.3 per side</td><td>press fit cracks tiles</td></tr>
+  <tr><td>cap in rim ledge</td><td class="n">0.15 per side</td><td>cap lifts, magnets float up</td></tr>
+  <tr><td>tray in yoke throat</td><td class="n">0.15 per side</td><td>tray rattles, wears through the 1.5 mm floor</td></tr>
+  <tr><td>electrode in groove</td><td class="n">1.0 deep, 0.2 wide</td><td>too deep = groove opens into the cavity</td></tr>
   <tr><td>electrode end in pocket</td><td class="n">5 mm deep</td><td>short end = leak behind the electrode</td></tr>
-  <tr><td>flange faces</td><td class="n">0 (metal to metal)</td><td>any gasket = air gap in the return path</td></tr>
-  <tr><td>M3 in flange hole</td><td class="n">Ø3.4</td><td>standard M3 clearance</td></tr>
+  <tr><td>peg in end wall</td><td class="n">1.6 blind</td><td>deeper = hole through into the magnets</td></tr>
+  <tr><td>M3 in lug hole</td><td class="n">Ø3.4</td><td>standard M3 clearance</td></tr>
 </table>
 
 <h2>Before you power it</h2>
 <ul class="chk">
-  <li>Both halves flush at the split line, 8 bolts seated, no visible gap in the flange joint</li>
+  <li>Both halves flush, 8 bolts seated in the lugs, no gap at the lug faces</li>
   <li>Compass: every row on a face points the same way, the two faces oppose</li>
   <li>Tray floor unbroken over the whole magnet area — hold it up to a light</li>
   <li>Electrodes fully home in their end pockets, not shorting to steel through a scratch</li>
-  <li>Lead exit sealed; bore clear down its whole 124 mm — no epoxy drips</li>
+  <li>Lead exit drilled, wired and epoxied; bore clear down its whole 124 mm</li>
   <li>Fuse in the supply line; runs under 2 minutes, ventilated (Cl₂)</li>
 </ul>
 
 <div class="note">
-  <strong>Model status.</strong> Dimensions are read back off the delivered solid, not
-  copied from the spec. Magnets are modelled as four 120 × 9.7 × 10 bars per face rather
-  than 96 loose tiles: same envelope, same 40 mm coverage, easier to read in a render.
+  <strong>Model status.</strong> Dimensions read back off the delivered solid.
+  Magnets modelled as four 120 × 9.7 × 10 bars per face instead of 96 loose tiles:
+  same envelope, same 40 mm coverage, readable in a render.
 </div>
 
 <footer>
-  Magnetide v21-r2e · generated from <code>Magnetide-v21r2e-assembly.step</code> ·
-  18 solids · bore verified clear 40 × 14 × 124 · steel blank 107.83 × 150 × 2.5
+  Magnetide v21-r2g · generated from <code>Magnetide-v21r2g-assembly.step</code> ·
+  18 solids · bore verified clear 40 × 14 × 124 · yoke blank 107.83 × 150 × 2.5 ·
+  probes: groove roof, peg holes, lead exit, bore
 </footer>
 
 </body>
