@@ -20,7 +20,8 @@ runs on existing gear + a scavenged supply.
 | Magnetic gap g | 17 |
 | Dh | 20.7 → Le/Dh = 5.8 (gate ≥ 3 ✓) |
 | Tilability | w = 40 ✓, Le = 120 ✓ |
-| Inlet | printed bellmouth front part, flare r ≥ 3 mm (target 5), bolted to steel tube |
+| Outlet | **straight** (α0 = 1). Delannoy 2025 measured 0.2 m/s with a diverging outlet vs 0.3 m/s without — recirculation in the diffuser. No expanding nozzle. |
+| Inlet | printed bellmouth front part, **curved** flare 48×30 mouth → 40×14 bore over 20 mm, r ≥ 3 mm (target 5), bolted to steel tube |
 
 ## 2. Magnets & yoke
 
