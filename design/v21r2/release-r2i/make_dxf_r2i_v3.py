@@ -30,6 +30,7 @@ R_WALL, R_LUG = 3.0, 1.5
 PLATE_HALF = 28.5
 ZM = 22.5
 FLANGE_W = 12.0
+HOLE_FACE = 8.25          # from the plate face; the bend occupies 0..R+t
 EAR_L, EAR_X = 24.0, (40.0, 110.0)
 HOLE_PITCH = 13.0
 HOLE_D = 3.4
@@ -46,9 +47,9 @@ BLANK_W = 2 * HALF
 
 BEND_LUG = HALF - (LEG_LUG + BA_LUG / 2)                   # from the blank centre line
 BEND_WALL = HALF - (LEG_LUG + BA_LUG + LEG_WALL + BA_WALL / 2)
-# the hole is at the middle of the folded flange face: FLANGE_W/2 measured
-# from the plate face, which lands (FLANGE_W/2 - SB_LUG) into the flat flange leg
-HOLE_Y = HALF - (LEG_LUG + (FLANGE_W / 2.0 - SB_LUG))
+# the hole must sit in the FLAT part of the flange: the bend eats R+t from the plate face,
+# so the usable flat is (FLANGE_W - SB_LUG) wide and the hole goes mid-flat
+HOLE_Y = HALF - (FLANGE_W - HOLE_FACE)
 MASS = L * BLANK_W * T * 7.85e-3
 
 assert (FLANGE_W - SB_LUG) > HOLE_D + 1.6, "no flat flange for the hole"
@@ -154,7 +155,7 @@ for x, y, s in [
     (9.0, -HALF - 22.0, "BEND 1   y = \u00b1%.2f   R%.1f  90\u00b0 DOWN  (dashed = arc centre)" % (BEND_WALL, R_WALL)),
     (9.0, -HALF - 27.0, "BEND 2   y = \u00b1%.2f   R%.1f  90\u00b0 OUT" % (BEND_LUG, R_LUG)),
     (9.0, -HALF - 32.0, "BA %.2f wall / %.2f lug    K %.2f    setback %.1f" % (BA_WALL, BA_LUG, K, SB_WALL)),
-    (9.0, -HALF - 37.0, "CHECK AFTER FOLD   22.5 high, 57 wide, lug 12, hole line 6.0 off the plate face"),
+    (9.0, -HALF - 37.0, "CHECK AFTER FOLD   22.5 high, 57 wide, lug 12, hole 8.25 off the plate face (mid-flat)"),
 ]:
     txt(s, x, y)
 

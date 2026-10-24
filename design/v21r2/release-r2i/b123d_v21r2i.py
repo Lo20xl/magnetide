@@ -15,7 +15,7 @@ import json
 import os
 
 from build123d import (
-    Align, Box, Compound, Cylinder, Plane, Pos, Rectangle, Rot, export_step,
+    Align, Axis, Box, Compound, Cylinder, Plane, Pos, Rectangle, Rot, export_step,
     export_stl, loft, mirror,
 )
 
@@ -44,7 +44,10 @@ SEAT_D = 1.0
 SEAT_W = 2.2
 END_POCKET = 5.0
 PEG_R, PEG_HOLE_R = 1.5, 1.65
-FLANGE_W = 12.0           # 8 mm lug leaves 3.57 mm of flat on 3 mm sheet - a 3.4 hole needs 5.5
+R_WALL, R_LUG_F = 3.0, 1.5
+FLANGE_W = 12.0          # 8 mm lug leaves 3.57 mm of flat on 3 mm sheet - a 3.4 hole needs 5.5
+HOLE_FACE = 8.25         # hole centre from the plate face: the bend eats the first R+t = 4.5,
+                         # so the flat spans 4.5..12 and the hole sits mid-flat
 EAR_L, EAR_X = 24.0, (40.0, 110.0)   # two tabs per half
 HOLE_PITCH = 13.0                   # two M3 per tab, 13 mm apart
 AMIN = (Align.MIN, Align.MIN, Align.MIN)
@@ -91,10 +94,24 @@ def shell_half(top):
         for x in EAR_X:                                   # cropped lugs, not a band
             piece = box(x - EAR_L / 2, x + EAR_L / 2, ya, yb, 0, zs * T)
             for dx in (-HOLE_PITCH / 2, HOLE_PITCH / 2):  # two holes per lug
-                piece -= Pos(x + dx, sgn * (W / 2 + FLANGE_W / 2), 0) * Cylinder(
+                piece -= Pos(x + dx, sgn * (W / 2 + HOLE_FACE), 0) * Cylinder(
                     1.7, T * 2, align=(Align.CENTER, Align.CENTER, Align.CENTER))
             flange = piece if flange is None else flange + piece
-    return part + flange
+    part = part + flange
+
+    # real bend radii: R3 on the wall fold, R1.5 on the lug fold. Without them the
+    # STEP is a sharp box and a shop cannot unfold it or check the blank.
+    inner = [e for e in part.edges().filter_by(Axis.X)
+             if abs(abs(e.center().Y) - (W / 2 - T)) < 1e-6
+             and abs(abs(e.center().Z) - ZIN) < 1e-6]
+    if inner:
+        part = part.fillet(R_WALL, inner)
+    lug = [e for e in part.edges().filter_by(Axis.X)
+           if abs(abs(e.center().Z) - T) < 1e-6
+           and W / 2 + 0.01 < abs(e.center().Y) < W / 2 + FLANGE_W + 0.01]
+    if lug:
+        part = part.fillet(R_LUG_F, lug)
+    return part
 
 
 steel_top, steel_bot = shell_half(True), shell_half(False)
