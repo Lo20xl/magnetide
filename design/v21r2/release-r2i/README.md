@@ -4,7 +4,7 @@ Conduction MHD pump for the Kelas 10.8 physics project. Seawater flows through a
 40 × 14 mm bore, a 483 mT field crosses it, current runs between two graphite
 electrodes, and the Lorentz force drives the water out the straight end.
 
-**Envelope** 150 × 72.7 × 45 mm · **bore** 40 × 14 × 124 mm · **dry mass** ≈ 1.15 kg
+**Envelope** 150 × 73 × 45 mm · **bore** 40 × 14 × 124 mm · **dry mass** ≈ 1.15 kg
 
 ---
 
