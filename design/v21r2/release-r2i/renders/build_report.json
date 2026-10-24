@@ -2,27 +2,27 @@
  "Steel_Top": {
   "size_mm": [
    150.0,
-   73.0,
+   81.0,
    22.5
   ],
   "z_mm": [
    0.0,
    22.5
   ],
-  "volume_mm3": 45286.1,
+  "volume_mm3": 46438.1,
   "solids": 1
  },
  "Steel_Bottom": {
   "size_mm": [
    150.0,
-   73.0,
+   81.0,
    22.5
   ],
   "z_mm": [
    -22.5,
    0.0
   ],
-  "volume_mm3": 45286.1,
+  "volume_mm3": 46438.1,
   "solids": 1
  },
  "Tray_Top": {
@@ -298,17 +298,19 @@
  "_render_stl_dir": "C:\\Users\\tangy\\Desktop\\magnetide-v21r2i-assembly\\render",
  "_steel_blank": {
   "t": 3.0,
-  "w_flat_mm": 95.57,
+  "w_flat_mm": 106.43,
   "length_mm": 150.0,
   "bend_allowance_mm": 6.786,
   "bend_allowance_lug_mm": 4.43,
   "K": 0.44,
   "R_in": 3.0,
   "R_in_lug": 1.5,
-  "fold_widths_mm": [
-   15.71,
-   3.57
+  "setback_mm": 6.0,
+  "bend_lines_from_centre_mm": [
+   25.89,
+   43.5
   ],
-  "mass_g": 337.6
+  "hole_line_mm": 44.22,
+  "mass_g": 376.0
  }
 }

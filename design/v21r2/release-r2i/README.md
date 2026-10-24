@@ -4,7 +4,7 @@ Conduction MHD pump for the Kelas 10.8 physics project. Seawater flows through a
 40 × 14 mm bore, a 483 mT field crosses it, current runs between two graphite
 electrodes, and the Lorentz force drives the water out the straight end.
 
-**Envelope** 150 × 73 × 45 mm · **bore** 40 × 14 × 124 mm · **dry mass** ≈ 1.15 kg
+**Envelope** 150 × 81 × 45 mm · **bore** 40 × 14 × 124 mm · **dry mass** ≈ 1.15 kg
 
 ---
 
@@ -38,8 +38,8 @@ is the only thing keeping brine off the magnets — inspect it against a light.
 |---|---|---|
 | `clamshell-flat-3.0mm.dxf` | 2 | 3.0 mm mild steel (DC01 / SPCC / AISI 1008) |
 
-Fold both long edges up 90° at ±28.5 on an R3 die, then fold the two lugs out 90° at ±44.06 on R1.5.
-Blank is 95.57 × 150, K = 0.44, 8 × Ø3.4 holes. Per half 338 g, 676 g for the pair.
+Bend both long edges down 90° on the R3 line (±25.89), then the two lugs out 90° on the R1.5 line (±43.50).
+Blank is 106.43 × 150 by bend development, K = 0.44, 8 × Ø3.4 holes. Per half 376 g, 752 g for the pair.
 
 ## Bought
 

@@ -39,9 +39,9 @@
 <h2>1. System summary</h2>
 <table class="kv">
   <tr><td>Function</td><td>Conduction MHD pump — Lorentz force on seawater in a crossed field</td></tr>
-  <tr><td>Envelope</td><td>150 × 73 × 45</td></tr>
+  <tr><td>Envelope</td><td>150 × 81 × 45</td></tr>
   <tr><td>Bore</td><td>40 × 14 × 124 (W × H × L)</td></tr>
-  <tr><td>Mass, steel</td><td>2 × 317 g</td></tr>
+  <tr><td>Mass, steel</td><td>2 × 376 g</td></tr>
   <tr><td>Mass, plastic</td><td>≈ 150 g (4 printed parts + 2 caps)</td></tr>
   <tr><td>Field in bore</td><td>483 mT design, N52, 96 tiles</td></tr>
   <tr><td>Closure</td><td>8 × M3 through cropped lugs, steel-to-steel at the split</td></tr>
@@ -52,7 +52,7 @@
 <table>
   <tr><th>Part</th><th class="n">Qty</th><th>Material</th><th class="n">Size (X×Y×Z)</th><th class="n">Mass</th><th>Process</th></tr>
   <tr><td>Yoke half</td><td class="n">2</td><td>3.0 mm mild steel DC01/SPCC</td>
-      <td class="n">150 × 72 × 22</td><td class="n">317 g</td><td>laser + 4 folds</td></tr>
+      <td class="n">150 × 81 × 22.5</td><td class="n">376 g</td><td>laser + 4 bends</td></tr>
   <tr><td>Tray</td><td class="n">2</td><td>PLA or PETG</td>
       <td class="n">124 × 50.7 × 19.5</td><td class="n">≈ 30 g</td><td>FDM</td></tr>
   <tr><td>Cap</td><td class="n">2</td><td>PLA, 100 % infill</td>
@@ -76,13 +76,14 @@
 <table>
   <tr><th>Parameter</th><th class="n">Value</th><th>Note</th></tr>
   <tr><td>Sheet thickness</td><td class="n">3.0</td><td>one gauge, plate and wall (+0.4 kg total)</td></tr>
-  <tr><td>Blank</td><td class="n">95.57 × 150</td><td>stepped outline — lugs only, not a band</td></tr>
-  <tr><td>Inside bend radius</td><td class="n">3.0 / 1.5</td><td>R3 wall folds, R1.5 lug folds (= 1t; an 8 mm lug cannot take R3)</td></tr>
+  <tr><td>Blank</td><td class="n">106.43 × 150</td><td>stepped outline — lugs only, not a band. Bend development, not an outside-dimension sum</td></tr>
+  <tr><td>Inside bend radius</td><td class="n">3.0 / 1.5</td><td>R3 wall folds, R1.5 lug folds — an 8 mm lug would leave only 3.5 mm of flat — too little for a Ø3.4 hole</td></tr>
   <tr><td>K-factor</td><td class="n">0.44</td><td>mild steel at R/t = 1.0 (R3) and 0.5 (R1.5)</td></tr>
   <tr><td>Bend allowance</td><td class="n">6.786 / 4.430</td><td>(R + K·t)·π/2, wall / lug</td></tr>
-  <tr><td>Fold 1 — wall</td><td class="n">at ±28</td><td>90° down, full length</td></tr>
-  <tr><td>Fold 2 — lug</td><td class="n">at ±44.06</td><td>90° out, two lugs per side at x 40 / 110</td></tr>
-  <tr><td>Lug size</td><td class="n">24 × 8</td><td>two Ø3.4 holes per lug, 13 mm pitch</td></tr>
+  <tr><td>Bend 1 — wall</td><td class="n">at ±25.89</td><td>90° down, full length; arc centre on the blank</td></tr>
+  <tr><td>Bend 2 — lug</td><td class="n">at ±43.50</td><td>90° out, two lugs per side at x 40 / 110</td></tr>
+  
+  <tr><td>Lug size</td><td class="n">24 × 12</td><td>two Ø3.4 holes per lug, 13 pitch, hole line 6.0 off the plate face. 12 mm is the minimum: the flat flange is 7.5 mm and a Ø3.4 hole needs 5.4 plus margin</td></tr>
   <tr><td>Flux path</td><td class="n">—</td><td>plate → wall → lug face → facing lug → wall → plate</td></tr>
 </table>
 
@@ -174,7 +175,7 @@ pull lug to lug.
   <tr><td class="n">r2f</td><td>groove 3.0 → 1.0 deep; gasket added</td><td>groove roof sat 1.5 mm above the cavity floor</td></tr>
   <tr><td class="n">r2g</td><td>flange cropped into lugs; peg holes blind; lead exit blind</td><td>restore the old yoke look; close through-holes</td></tr>
   <tr><td class="n">r2h</td><td>lugs 20 → 24 mm with <strong>two holes each</strong></td><td>two fasteners per lug, per the reference sketch</td></tr>
-  <tr><td class="n">r2i</td><td>sheet 2.5 → 3.0 mm; R0.2 → R3 wall / R1.5 lug; blank 107.83 → 95.57</td><td>R0.2 on 2.5 mm is 86 % outer-fibre strain — it cracks; 3 mm buys ~17 % more gap field, 4 mm is the model peak</td></tr>
+  <tr><td class="n">r2i</td><td>sheet 2.5 → 3.0 mm; R0.2 → R3 wall / R1.5 lug; blank 107.83 → 106.43; lug 8 → 12</td><td>R0.2 on 2.5 mm is 86 % outer-fibre strain — it cracks; 3 mm buys ~17 % more gap field, 4 mm is the model peak</td></tr>
 </table>
 
 <footer>
