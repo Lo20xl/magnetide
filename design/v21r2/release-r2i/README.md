@@ -13,6 +13,8 @@ electrodes, and the Lorentz force drives the water out the straight end.
 | Path | What it is |
 |---|---|
 | `Magnetide-v21r2i-assembly.step` | Full assembly, 18 solids, mm units. Opens in Fusion/SolidWorks/FreeCAD. |
+| `yoke-steel-top.step` | The steel half alone, with the R3 / R1.5 bends as real radii — this is the file to send a sheet-metal shop. |
+| `yoke-steel-bottom.step` | Same part, mirrored. |
 | `docs/Build-Instructions.pdf` | Picture-by-picture build manual — 7 numbered steps, one render each, pre-power checklist. |
 | `docs/Design-Document.pdf` | Part list, sizes, tolerances, magnetic/electrical design, revision history. |
 | `docs/archive/` | Earlier text-style assembly instructions (superseded). |
