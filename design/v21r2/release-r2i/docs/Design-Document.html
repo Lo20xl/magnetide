@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magnetide v21-r2i — Design Document</title>
+<style>
+  @page { size: A4; margin: 15mm 13mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", Inter, system-ui, sans-serif; color: #1c1c1e;
+         line-height: 1.42; font-size: 9.5pt; margin: 0; }
+  h1 { font-size: 19pt; margin: 0 0 1.5mm; letter-spacing: -0.3px; }
+  h2 { font-size: 12pt; margin: 7mm 0 2mm; padding-bottom: 1mm;
+       border-bottom: 1.5px solid #1c1c1e; }
+  h3 { font-size: 10pt; margin: 4mm 0 1mm; }
+  .sub { color: #666; font-size: 8.5pt; margin-bottom: 4mm; }
+  table { border-collapse: collapse; width: 100%; margin: 2mm 0 3.5mm; font-size: 8.4pt; }
+  th, td { border: 1px solid #d2d2d2; padding: 1.3mm 1.8mm; text-align: left; vertical-align: top; }
+  th { background: #f2f2f0; font-weight: 600; font-size: 8.2pt; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr.tot td { background: #fafae8; font-weight: 600; }
+  .note { background: #f7f7f4; border-left: 3px solid #1c1c1e; padding: 2mm 2.8mm;
+          margin: 2mm 0; font-size: 8.8pt; }
+  code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 8.3pt;
+         background: #f4f4f2; padding: 0.2mm 0.8mm; border-radius: 2px; }
+  footer { margin-top: 6mm; padding-top: 2mm; border-top: 1px solid #ddd;
+           font-size: 7.6pt; color: #777; }
+  .pb { page-break-before: always; }
+  .kv td:first-child { color: #555; width: 42%; }
+</style>
+</head>
+<body>
+
+<h1>Magnetide v21-r2i — Design Document</h1>
+<div class="sub">
+  Reynard Filbert Tang · Kelas 10.8, Kelompok 1 · MHD seawater pump · revision r2i ·
+  all dimensions mm, tolerances ±0.2 unless stated
+</div>
+
+<h2>1. System summary</h2>
+<table class="kv">
+  <tr><td>Function</td><td>Conduction MHD pump — Lorentz force on seawater in a crossed field</td></tr>
+  <tr><td>Envelope</td><td>150 × 72.7 × 45</td></tr>
+  <tr><td>Bore</td><td>40 × 14 × 124 (W × H × L)</td></tr>
+  <tr><td>Mass, steel</td><td>2 × 317 g</td></tr>
+  <tr><td>Mass, plastic</td><td>≈ 150 g (4 printed parts + 2 caps)</td></tr>
+  <tr><td>Field in bore</td><td>483 mT design, N52, 96 tiles</td></tr>
+  <tr><td>Closure</td><td>8 × M3 through cropped lugs, steel-to-steel at the split</td></tr>
+  <tr><td>Sealing</td><td>Tray is a closed cavity; no gasket at the split (see §7)</td></tr>
+</table>
+
+<h2>2. Part list</h2>
+<table>
+  <tr><th>Part</th><th class="n">Qty</th><th>Material</th><th class="n">Size (X×Y×Z)</th><th class="n">Mass</th><th>Process</th></tr>
+  <tr><td>Yoke half</td><td class="n">2</td><td>3.0 mm mild steel DC01/SPCC</td>
+      <td class="n">150 × 72 × 22</td><td class="n">317 g</td><td>laser + 4 folds</td></tr>
+  <tr><td>Tray</td><td class="n">2</td><td>PLA or PETG</td>
+      <td class="n">124 × 50.7 × 19.5</td><td class="n">≈ 30 g</td><td>FDM</td></tr>
+  <tr><td>Cap</td><td class="n">2</td><td>PLA, 100 % infill</td>
+      <td class="n">121.7 × 42.7 × 1.0</td><td class="n">≈ 5 g</td><td>FDM</td></tr>
+  <tr><td>Bellmouth</td><td class="n">1</td><td>PLA or PETG</td>
+      <td class="n">20 × 52 × 39</td><td class="n">≈ 21 g</td><td>FDM</td></tr>
+  <tr><td>Rear block</td><td class="n">1</td><td>PLA or PETG</td>
+      <td class="n">5.5 × 52 × 39</td><td class="n">≈ 8 g</td><td>FDM</td></tr>
+  <tr><td>Electrode</td><td class="n">2</td><td>graphite plate</td>
+      <td class="n">134 × 14 × 2</td><td class="n">≈ 16 g</td><td>bought / cut</td></tr>
+  <tr><td>Magnet tile</td><td class="n">96</td><td>N52 NdFeB, Ni-Cu-Ni</td>
+      <td class="n">20 × 10 × 5</td><td class="n">≈ 7.5 g</td><td>bought</td></tr>
+  <tr><td>Bolt set</td><td class="n">8</td><td>A2 stainless</td>
+      <td class="n">M3 × 14 + nut + washer</td><td class="n">—</td><td>bought</td></tr>
+  <tr><td>Lead grommet</td><td class="n">2</td><td>epoxy</td>
+      <td class="n">Ø1.6</td><td class="n">—</td><td>field-applied</td></tr>
+  <tr class="tot"><td colspan="5">Total mass, dry</td><td class="n">≈ 1.15 kg</td></tr>
+</table>
+
+<h2>3. Steel yoke</h2>
+<table>
+  <tr><th>Parameter</th><th class="n">Value</th><th>Note</th></tr>
+  <tr><td>Sheet thickness</td><td class="n">3.0</td><td>one gauge, plate and wall (+0.4 kg total)</td></tr>
+  <tr><td>Blank</td><td class="n">95.57 × 150</td><td>stepped outline — lugs only, not a band</td></tr>
+  <tr><td>Inside bend radius</td><td class="n">3.0 / 1.5</td><td>R3 wall folds, R1.5 lug folds (= 1t; an 8 mm lug cannot take R3)</td></tr>
+  <tr><td>K-factor</td><td class="n">0.44</td><td>mild steel at R/t = 1.0 (R3) and 0.5 (R1.5)</td></tr>
+  <tr><td>Bend allowance</td><td class="n">6.786 / 4.430</td><td>(R + K·t)·π/2, wall / lug</td></tr>
+  <tr><td>Fold 1 — wall</td><td class="n">at ±28</td><td>90° down, full length</td></tr>
+  <tr><td>Fold 2 — lug</td><td class="n">at ±44.06</td><td>90° out, two lugs per side at x 40 / 110</td></tr>
+  <tr><td>Lug size</td><td class="n">24 × 8</td><td>two Ø3.4 holes per lug, 13 mm pitch</td></tr>
+  <tr><td>Flux path</td><td class="n">—</td><td>plate → wall → lug face → facing lug → wall → plate</td></tr>
+</table>
+
+<div class="note">
+  The lug is cropped rather than continuous because the old yoke looked better that way,
+  and the clamp load is identical: 8 × M3 at 2 N·m gives ≈ 8 kN total preload across
+  four lug pairs. What the crop does cost is torsional stiffness at the split — the lugs
+  locate on bolt shanks alone, so add two 3 mm dowels if the pump gets knocked around.
+</div>
+
+<h2>4. Tray — the water barrier</h2>
+<table>
+  <tr><th>Feature</th><th class="n">Value</th><th>Why</th></tr>
+  <tr><td>Floor thickness</td><td class="n">1.5</td><td>only material between bore and magnets</td></tr>
+  <tr><td>Cavity</td><td class="n">120 × 40 × 10</td><td>48 tiles per face, 2 layers of 5 mm</td></tr>
+  <tr><td>Wall at bore</td><td class="n">4.85</td><td>seals the bore side and backs the electrode</td></tr>
+  <tr><td>Electrode groove</td><td class="n">1.0 deep × 2.2 wide</td><td>ceiling sits 0.5 <em>below</em> the cavity floor</td></tr>
+  <tr><td>Peg holes</td><td class="n">Ø1.65 × 1.6 blind</td><td>0.4 mm of plastic left in a 2.0 wall</td></tr>
+  <tr><td>Lead channel</td><td class="n">Ø1.6 blind, 0.4 skin</td><td>drill through at wiring, seal with epoxy</td></tr>
+  <tr><td>Tray-to-yoke clearance</td><td class="n">0.15 / side</td><td>drop-in; see §7 on shimming</td></tr>
+  <tr><td>Cap ledge</td><td class="n">1.0 × 1.5</td><td>lid sits flush with the steel inner face</td></tr>
+</table>
+
+<h2 class="pb">5. Magnetic and electrical design</h2>
+<table>
+  <tr><th>Parameter</th><th class="n">Value</th><th>Basis</th></tr>
+  <tr><td>Magnet grade</td><td class="n">N52</td><td>Br ≈ 1.43 T</td></tr>
+  <tr><td>Tiles per face</td><td class="n">48</td><td>6 × 4 × 2 layers of 5 mm</td></tr>
+  <tr><td>Active pole area</td><td class="n">120 × 40</td><td>4800 mm²</td></tr>
+  <tr><td>Field in bore</td><td class="n">483 mT</td><td>2 mm effective gap (1.0 cap + steel), measured on v21</td></tr>
+  <tr><td>Electrode area</td><td class="n">124 × 14 = 1736</td><td>mm² wetted, per plate</td></tr>
+  <tr><td>Electrode gap</td><td class="n">40</td><td>bore width</td></tr>
+  <tr><td>Current density, design</td><td class="n">0.1 A/cm²</td><td>graphite in seawater, conservative</td></tr>
+  <tr><td>Design current</td><td class="n">1.7 A</td><td>0.1 A/cm² × 17.4 cm²</td></tr>
+  <tr><td>Lorentz pressure</td><td class="n">≈ 82 Pa</td><td>J × B × gap, idealised</td></tr>
+  <tr><td>Blocked head</td><td class="n">≈ 8 mm H₂O</td><td>p / (ρg), seawater 1025 kg/m³</td></tr>
+</table>
+
+<div class="note">
+  Treat these as an order-of-magnitude check, not a performance guarantee. Real
+  throughput will be lower: shunt current through the seawater beside the plates,
+  end losses at the inlet and outlet, and bubble void fraction from electrolysis all
+  reduce the ideal numbers. The v21 boat test measured 0.2–0.3 m/s with a straight
+  outlet — that is the number to design the hull around.
+</div>
+
+<h3>5.1 Why the flux path matters more than the magnet grade</h3>
+<p>
+Every millimetre of non-magnetic material between magnet and steel is in series with
+the whole circuit. The cap is 1.0 mm and the steel plate is directly above it, so the
+gap is 1.0 mm of plastic. Doubling that cap to 2 mm would drop the bore field by
+roughly a fifth. This is also why nothing compressible goes on the cap face — foam
+there is an air gap wearing a plastic hat.
+</p>
+
+<h2>6. Fit and tolerance table</h2>
+<table>
+  <tr><th>Interface</th><th class="n">Nominal</th><th class="n">Clearance</th><th>Failure mode</th></tr>
+  <tr><td>magnet ↔ cavity</td><td class="n">9.7 in 10.0</td><td class="n">0.3 total</td><td>press fit cracks tiles</td></tr>
+  <tr><td>cap ↔ ledge</td><td class="n">121.7 in 124</td><td class="n">0.3 total</td><td>cap lifts, stack moves up</td></tr>
+  <tr><td>tray ↔ yoke throat</td><td class="n">50.7 in 51.0</td><td class="n">0.15 / side</td><td>rattle, floor wear</td></tr>
+  <tr><td>electrode ↔ groove</td><td class="n">2.0 in 2.2</td><td class="n">0.2</td><td>water bypasses the plate</td></tr>
+  <tr><td>peg ↔ hole</td><td class="n">3.0 in 3.3</td><td class="n">0.3</td><td>end block misaligns</td></tr>
+  <tr><td>M3 ↔ lug hole</td><td class="n">3.0 in 3.4</td><td class="n">0.4</td><td>standard clearance</td></tr>
+  <tr><td>split faces</td><td class="n">0</td><td class="n">metal-metal</td><td>any shim = field loss</td></tr>
+</table>
+
+<h2>7. How the yoke retains the tray</h2>
+<p>
+Vertically the assembly is a stack: tray rim → steel plate (z 19.5), mirrored tray
+butted at z 0. Bolting the halves closes that stack, so the plastic cannot move up or
+down once the lugs are tight. Lengthwise, the bellmouth and rear block pin the tray at
+both ends through the pegs and electrode pockets. Sideways there is <strong>0.15 mm a
+side of clearance and no clamp</strong> — the bolts never squeeze the plastic, they only
+pull lug to lug.
+</p>
+<div class="note">
+  If the tray rattles sideways, a 0.3–0.5 mm closed-cell foam strip on the outer wall
+  faces will take it up. Do not put foam between cap and steel plate: that surface is
+  the magnet's path into the yoke. Do not use open-cell foam anywhere in the assembly —
+  it wicks brine into the cavity.
+</div>
+
+<h2>8. Revision history</h2>
+<table>
+  <tr><th class="n">Rev</th><th>Change</th><th>Reason</th></tr>
+  <tr><td class="n">r2c</td><td>cap introduced, per-tile magnets</td><td>keep magnet stack captive</td></tr>
+  <tr><td class="n">r2e</td><td>magnet moved inside a closed tray cavity</td><td>tray should enclose, not support</td></tr>
+  <tr><td class="n">r2f</td><td>groove 3.0 → 1.0 deep; gasket added</td><td>groove roof sat 1.5 mm above the cavity floor</td></tr>
+  <tr><td class="n">r2g</td><td>flange cropped into lugs; peg holes blind; lead exit blind</td><td>restore the old yoke look; close through-holes</td></tr>
+  <tr><td class="n">r2i</td><td>lugs 20 → 24 mm with <strong>two holes each</strong></td><td>two fasteners per lug, per the reference sketch</td></tr>
+</table>
+
+<footer>
+  Magnetide v21-r2i design document · generated from <code>Magnetide-v21r2i-assembly.step</code> ·
+  18 solids · all dimensions read back from the solid, not from the spec
+</footer>
+
+</body>
+</html>

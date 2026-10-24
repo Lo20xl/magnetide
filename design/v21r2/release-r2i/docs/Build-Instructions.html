@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magnetide v21-r2i — Build Instructions</title>
+<style>
+  @page { size: A4; margin: 12mm 12mm 10mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", Inter, system-ui, sans-serif; color: #111;
+         font-size: 10pt; line-height: 1.35; margin: 0; -webkit-print-color-adjust: exact; }
+
+  /* ---------- cover strip ---------- */
+  .top { display: flex; align-items: flex-end; justify-content: space-between;
+         border-bottom: 3px solid #111; padding-bottom: 2.5mm; margin-bottom: 4mm; }
+  .top h1 { font-size: 19pt; margin: 0; letter-spacing: -0.4px; line-height: 1.05; }
+  .top .rev { font-size: 8.5pt; color: #555; text-align: right; line-height: 1.4; }
+  .badge { display: inline-block; background: #111; color: #fff; font-size: 8pt;
+           font-weight: 700; letter-spacing: .6px; padding: 1mm 2.2mm; border-radius: 2px;
+           vertical-align: 3px; margin-left: 2mm; }
+
+  /* ---------- inventory ---------- */
+  .inv { display: flex; gap: 2.5mm; margin: 0 0 4mm; }
+  .box { flex: 1; border: 1.5px solid #111; border-radius: 4px; padding: 2mm 2.2mm;
+         text-align: center; }
+  .box .q { font-size: 15pt; font-weight: 800; line-height: 1; }
+  .box .nm { font-size: 7.6pt; font-weight: 600; text-transform: uppercase;
+             letter-spacing: .3px; margin-top: .8mm; }
+  .box .sz { font-size: 7.2pt; color: #666; margin-top: .4mm; }
+
+  /* ---------- steps ---------- */
+  .step { display: flex; gap: 4mm; border: 2px solid #111; border-radius: 5px;
+          padding: 3mm; margin-bottom: 4mm; page-break-inside: avoid; align-items: stretch; }
+  .step .n { flex: 0 0 13mm; font-size: 30pt; font-weight: 800; line-height: .9;
+             text-align: center; padding-top: .5mm; }
+  .step .c { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  .step h2 { font-size: 12pt; margin: 0 0 1.2mm; line-height: 1.1; }
+  .step p { margin: 0 0 1.4mm; }
+  .step .need { margin-top: auto; font-size: 8pt; color: #444; border-top: 1px dashed #bbb;
+                padding-top: 1.4mm; }
+  .step .need b { color: #111; }
+  .step .pic { flex: 0 0 46%; display: flex; align-items: center; }
+  .step .pic img { width: 100%; height: auto; display: block; }
+  .hint { background: #f4f4f2; border-left: 3px solid #111; padding: 1.6mm 2.6mm;
+          font-size: 8.4pt; margin: 0 0 1.4mm; }
+  .warn { background: #fdf1ef; border-left: 3px solid #b5342c; padding: 1.6mm 2.6mm;
+          font-size: 8.4pt; margin: 0 0 1.4mm; }
+  .pb { page-break-before: always; }
+
+  /* ---------- footer table ---------- */
+  table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 2mm 0 3mm; }
+  th, td { border: 1px solid #cfcfcf; padding: 1.3mm 2mm; text-align: left; }
+  th { background: #f1f1ef; font-weight: 600; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; }
+  .chk { list-style: none; margin: 0; padding: 0; font-size: 9pt; }
+  .chk li { margin-bottom: 1.2mm; }
+  .chk li::before { content: "☐"; font-size: 11pt; margin-right: 2mm; }
+  footer { margin-top: 3mm; padding-top: 2mm; border-top: 1px solid #ccc;
+           font-size: 7.6pt; color: #777; }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>Magnetide — Build Instructions<span class="badge">v21-r2i</span></h1>
+  <div class="rev">
+    MHD seawater pump · 150 × 72.7 × 45 mm<br>
+    Kelas 10.8, Kelompok 1 · Reynard Filbert Tang<br>
+    Rev r2i · 18 parts · 7 steps
+  </div>
+</div>
+
+<div class="inv">
+  <div class="box"><div class="q">2×</div><div class="nm">Yoke</div><div class="sz">3.0 mm steel · 150 long</div></div>
+  <div class="box"><div class="q">2×</div><div class="nm">Tray</div><div class="sz">124 × 50.7 × 19.5</div></div>
+  <div class="box"><div class="q">2×</div><div class="nm">Cap</div><div class="sz">1 mm · Ø3 pegs</div></div>
+  <div class="box"><div class="q">96×</div><div class="nm">Magnet</div><div class="sz">20 × 10 × 5 N52</div></div>
+  <div class="box"><div class="q">2×</div><div class="nm">Electrode</div><div class="sz">graphite 134 × 14 × 2</div></div>
+  <div class="box"><div class="q">1+1</div><div class="nm">Ends</div><div class="sz">bellmouth · rear block</div></div>
+  <div class="box"><div class="q">8×</div><div class="nm">M3 bolt</div><div class="sz">M3 × 14 + nut</div></div>
+</div>
+
+<div class="step">
+  <div class="n">1</div>
+  <div class="c">
+    <h2>Fold the two yokes</h2>
+    <p>Fold 90° <b>down</b> at ±28.5 on an <b>R3</b> die for the walls, then the two lugs
+       <b>out</b> at ±44.06 on <b>R1.5</b>. One blank per half, mirror image.</p>
+    <div class="hint">Check: 57 mm across the plate, 22.5 mm plate face to lug face.
+      Two Ø3.4 holes per lug, 13 mm apart, at x 40 and x 110. R3 is not optional on
+      3 mm sheet — a sharp die splits the outside of the bend.</div>
+    <div class="need"><b>Need:</b> 2 × clamshell-flat-3.0mm.dxf, folded · <b>Then:</b> deburr all edges</div>
+  </div>
+  <div class="pic"><img src="steps/step_01_yoke.png" alt="two folded yokes"></div>
+</div>
+
+<div class="step">
+  <div class="n">2</div>
+  <div class="c">
+    <h2>Load the magnets</h2>
+    <p>48 tiles per tray: 6 along the bore, 4 across the width, 2 layers deep.
+       They drop into the cavity and finish flush with the floor.</p>
+    <div class="warn"><b>Compass check before the epoxy sets.</b> All four rows on a face
+      point the same way; the other tray points the other way. One flipped row stalls
+      a quarter of the bore.</div>
+    <div class="need"><b>Need:</b> 2 × tray, 96 × N52 tile, epoxy · <b>Drawn as 4 bars</b> = the 48 tiles of one tray · drop in, never press-fit</div>
+  </div>
+  <div class="pic"><img src="steps/step_02_magnets.png" alt="magnets in tray"></div>
+</div>
+
+<div class="step">
+  <div class="n">3</div>
+  <div class="c">
+    <h2>Cap it</h2>
+    <p>Drop the 1 mm cap on the ledge. It sits on the magnets and finishes flush with
+       the steel inner face.</p>
+    <div class="hint">This face is the magnet's road into the yoke. A bead of epoxy at the
+      rim only — <b>never</b> a puddle.</div>
+    <div class="need"><b>Need:</b> 2 × cap · <b>Result:</b> stack height 19.5 mm per half</div>
+  </div>
+  <div class="pic"><img src="steps/step_03_cap.png" alt="cap on tray"></div>
+</div>
+
+<div class="step">
+  <div class="n">4</div>
+  <div class="c">
+    <h2>Slide in the electrodes</h2>
+    <p>Each graphite plate slides into the 1 mm groove from the end. Push until it sits
+      5 mm inside the end pocket.</p>
+    <div class="hint">Full 14 mm face exposed: 124 × 14 = 1736 mm² per plate.
+      Keep the edges clean — a burr on graphite is a short waiting to happen.</div>
+    <div class="need"><b>Need:</b> 2 × electrode · <b>Fit:</b> 0.2 mm clearance in the groove</div>
+  </div>
+  <div class="pic"><img src="steps/step_04_electrode.png" alt="electrode in groove"></div>
+</div>
+
+<div class="step">
+  <div class="n">5</div>
+  <div class="c">
+    <h2>Bellmouth and rear block</h2>
+    <p>Two Ø3 pegs each, into the blind holes in the tray end faces. Mouth in, straight end out.</p>
+    <div class="hint"><b>Wire it now:</b> drill through the last 0.4 mm of the lead channel,
+      feed the two wires out, epoxy the hole shut around them.</div>
+    <div class="need"><b>Need:</b> 1 × bellmouth, 1 × rear block, epoxy · <b>Keep:</b> the outlet straight</div>
+  </div>
+  <div class="pic"><img src="steps/step_05_ends.png" alt="bellmouth and rear block"></div>
+</div>
+
+<div class="step">
+  <div class="n">6</div>
+  <div class="c">
+    <h2>Close the yoke</h2>
+    <p>Lower tray into the bottom yoke, upper into the top. Bring the halves together so
+       the lug faces meet bare — no paint, no gasket.</p>
+    <div class="hint">This is a <b>stack clamp</b>: the tray rim lands on the steel plate,
+      the mirrored tray butts it at mid-plane, the bolts close the sandwich.</div>
+    <div class="need"><b>Need:</b> 2 × assembled half · <b>Check:</b> split faces bare metal</div>
+  </div>
+  <div class="pic"><img src="steps/step_06_close.png" alt="halves closing"></div>
+</div>
+
+<div class="step pb">
+  <div class="n">7</div>
+  <div class="c">
+    <h2>Bolt it</h2>
+    <p>Eight M3 × 14 through the lugs — <b>two per lug, 13 mm apart</b>. Tighten in a cross
+       pattern, a little at a time, so the halves seat flat instead of rocking.</p>
+    <div class="hint">2 N·m gives roughly 8 kN across the four lug pairs. Run a nut and
+      washer on the underside; thread never protrudes into the bore.</div>
+    <div class="need"><b>Need:</b> 8 × M3 bolt, nut, washer · <b>Check:</b> no gap at any lug face</div>
+  </div>
+  <div class="pic"><img src="steps/step_07_hero.png" alt="finished assembly"></div>
+</div>
+
+<h2 style="font-size:12pt;margin:2mm 0 2mm;border-bottom:2px solid #111;padding-bottom:1mm">Before you power it</h2>
+<ul class="chk">
+  <li>Both halves flush, 8 bolts seated, no gap at the lug faces</li>
+  <li>Compass: every row on a face points the same way, the two faces oppose</li>
+  <li>Tray floor unbroken over the whole magnet area — hold it up to a light</li>
+  <li>Electrodes fully home, not shorting to steel through a scratch</li>
+  <li>Lead exit drilled, wired, epoxied; bore clear down its whole 124 mm</li>
+  <li>Fuse in the supply line; runs under 2 minutes, ventilated (Cl₂)</li>
+</ul>
+
+<table>
+  <tr><th>If it does not fit</th><th class="n">Nominal</th><th>Cause</th></tr>
+  <tr><td>tray rattles sideways</td><td class="n">0.15 / side</td><td>shim 0.3–0.5 mm closed-cell foam on the <b>outer</b> wall only</td></tr>
+  <tr><td>cap stands proud of the steel</td><td class="n">1.0</td><td>epoxy puddle under the cap, or a magnet sitting proud</td></tr>
+  <tr><td>electrode will not enter</td><td class="n">2.0 in 2.2</td><td>graphite burr, or the groove has epoxy in it</td></tr>
+  <tr><td>halves will not close</td><td class="n">0 gap</td><td>tray rim not seated on the plate — check the stack, not the bolts</td></tr>
+</table>
+
+<footer>
+  Magnetide v21-r2i · build instructions · every picture is a render of the shipped
+  <code>Magnetide-v21r2i-assembly.step</code>, same viewpoint throughout · bore 40 × 14 × 124 mm
+</footer>
+
+</body>
+</html>

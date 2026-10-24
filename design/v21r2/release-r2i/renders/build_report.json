@@ -1,0 +1,314 @@
+{
+ "Steel_Top": {
+  "size_mm": [
+   150.0,
+   73.0,
+   22.5
+  ],
+  "z_mm": [
+   0.0,
+   22.5
+  ],
+  "volume_mm3": 45286.1,
+  "solids": 1
+ },
+ "Steel_Bottom": {
+  "size_mm": [
+   150.0,
+   73.0,
+   22.5
+  ],
+  "z_mm": [
+   -22.5,
+   0.0
+  ],
+  "volume_mm3": 45286.1,
+  "solids": 1
+ },
+ "Tray_Top": {
+  "size_mm": [
+   124.0,
+   50.7,
+   19.5
+  ],
+  "z_mm": [
+   0.0,
+   19.5
+  ],
+  "volume_mm3": 28097.4,
+  "solids": 1
+ },
+ "Tray_Bottom": {
+  "size_mm": [
+   124.0,
+   50.7,
+   19.5
+  ],
+  "z_mm": [
+   -19.5,
+   0.0
+  ],
+  "volume_mm3": 28097.4,
+  "solids": 1
+ },
+ "Cap_Top": {
+  "size_mm": [
+   121.7,
+   42.7,
+   1.0
+  ],
+  "z_mm": [
+   18.5,
+   19.5
+  ],
+  "volume_mm3": 5196.6,
+  "solids": 1
+ },
+ "Cap_Bottom": {
+  "size_mm": [
+   121.7,
+   42.7,
+   1.0
+  ],
+  "z_mm": [
+   -19.5,
+   -18.5
+  ],
+  "volume_mm3": 5196.6,
+  "solids": 1
+ },
+ "Electrode_P": {
+  "size_mm": [
+   134.0,
+   2.0,
+   16.0
+  ],
+  "z_mm": [
+   -8.0,
+   8.0
+  ],
+  "volume_mm3": 4288.0,
+  "solids": 1
+ },
+ "Electrode_N": {
+  "size_mm": [
+   134.0,
+   2.0,
+   16.0
+  ],
+  "z_mm": [
+   -8.0,
+   8.0
+  ],
+  "volume_mm3": 4288.0,
+  "solids": 1
+ },
+ "Bellmouth": {
+  "size_mm": [
+   20.0,
+   52.0,
+   39.0
+  ],
+  "z_mm": [
+   -19.5,
+   19.5
+  ],
+  "volume_mm3": 20264.4,
+  "solids": 1
+ },
+ "Rear_Block": {
+  "size_mm": [
+   5.0,
+   52.0,
+   39.0
+  ],
+  "z_mm": [
+   -19.5,
+   19.5
+  ],
+  "volume_mm3": 6711.0,
+  "solids": 1
+ },
+ "MAG_N_0": {
+  "size_mm": [
+   120.0,
+   9.7,
+   10.0
+  ],
+  "z_mm": [
+   8.5,
+   18.5
+  ],
+  "volume_mm3": 11640.0,
+  "solids": 1
+ },
+ "MAG_N_1": {
+  "size_mm": [
+   120.0,
+   9.7,
+   10.0
+  ],
+  "z_mm": [
+   8.5,
+   18.5
+  ],
+  "volume_mm3": 11640.0,
+  "solids": 1
+ },
+ "MAG_N_2": {
+  "size_mm": [
+   120.0,
+   9.7,
+   10.0
+  ],
+  "z_mm": [
+   8.5,
+   18.5
+  ],
+  "volume_mm3": 11640.0,
+  "solids": 1
+ },
+ "MAG_N_3": {
+  "size_mm": [
+   120.0,
+   9.7,
+   10.0
+  ],
+  "z_mm": [
+   8.5,
+   18.5
+  ],
+  "volume_mm3": 11640.0,
+  "solids": 1
+ },
+ "MAG_S_0": {
+  "size_mm": [
+   120.0,
+   9.7,
+   10.0
+  ],
+  "z_mm": [
+   -18.5,
+   -8.5
+  ],
+  "volume_mm3": 11640.0,
+  "solids": 1
+ },
+ "MAG_S_1": {
+  "size_mm": [
+   120.0,
+   9.7,
+   10.0
+  ],
+  "z_mm": [
+   -18.5,
+   -8.5
+  ],
+  "volume_mm3": 11640.0,
+  "solids": 1
+ },
+ "MAG_S_2": {
+  "size_mm": [
+   120.0,
+   9.7,
+   10.0
+  ],
+  "z_mm": [
+   -18.5,
+   -8.5
+  ],
+  "volume_mm3": 11640.0,
+  "solids": 1
+ },
+ "MAG_S_3": {
+  "size_mm": [
+   120.0,
+   9.7,
+   10.0
+  ],
+  "z_mm": [
+   -18.5,
+   -8.5
+  ],
+  "volume_mm3": 11640.0,
+  "solids": 1
+ },
+ "_leak_probes": [],
+ "_wall_probes": [],
+ "_probe_hits": [],
+ "_overlaps": {
+  "Electrode_P_vs_Tray_Top": 0.0,
+  "MAG_N_0_vs_Tray_Top": 0.0,
+  "MAG_N_0_vs_Cap_Top": 0.0,
+  "MAG_N_0_vs_Steel_Top": 0.0,
+  "Cap_Top_vs_Tray_Top": 0.0,
+  "Cap_Top_vs_Steel_Top": 0.0,
+  "Tray_Top_vs_Steel_Top": 0.0,
+  "Bellmouth_vs_Tray_Top": 0.0,
+  "Rear_Block_vs_Tray_Top": 0.0
+ },
+ "_checks": [
+  [
+   "steel_uniform_3.0",
+   true
+  ],
+  [
+   "tray_floor_under_magnet",
+   true
+  ],
+  [
+   "cap_on_magnet_under_steel",
+   true
+  ],
+  [
+   "cap_top_flush_with_steel",
+   true
+  ],
+  [
+   "rim_meets_steel_inner_face",
+   true
+  ],
+  [
+   "stack_closes_at_22.5",
+   true
+  ],
+  [
+   "electrode_buried_1mm",
+   true
+  ],
+  [
+   "bore_clear",
+   true
+  ],
+  [
+   "groove_ceiling_below_cavity_floor",
+   true
+  ],
+  [
+   "no_groove_roof_gap",
+   true
+  ],
+  [
+   "peg_holes_blind",
+   true
+  ]
+ ],
+ "_all_checks_pass": true,
+ "_step": "C:\\Users\\tangy\\Desktop\\magnetide-v21r2i-assembly\\Magnetide-v21r2i-assembly.step",
+ "_render_stl_dir": "C:\\Users\\tangy\\Desktop\\magnetide-v21r2i-assembly\\render",
+ "_steel_blank": {
+  "t": 3.0,
+  "w_flat_mm": 95.57,
+  "length_mm": 150.0,
+  "bend_allowance_mm": 6.786,
+  "bend_allowance_lug_mm": 4.43,
+  "K": 0.44,
+  "R_in": 3.0,
+  "R_in_lug": 1.5,
+  "fold_widths_mm": [
+   15.71,
+   3.57
+  ],
+  "mass_g": 337.6
+ }
+}
